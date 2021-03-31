@@ -1,0 +1,68 @@
+body{
+    margin:0;
+    padding:0;
+    background-image:url(./img/fondo.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.mensajeform{
+    margin-top:1%;
+    color: rgb(255, 255, 255);
+    padding: 1%;
+    text-align: center;
+    width:95%;
+    background-color:rgb(255, 0, 0);
+}
+.login{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    padding-bottom: 10%;
+    padding-top: 5%;
+}
+form{
+    width:100%;
+}
+.titulo{
+    width: 95%;
+    background-color: #ffffffd2;
+    padding:2%;
+    color:rgba(0, 0, 0, 0.637);
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 90%;
+}
+.formulario{
+    width: 45%;
+}
+.menu{
+    text-align: center;
+    font-size: 15px;
+}
+.division{
+    display:flex;
+    padding:3%;
+    background-color:#bdbdbdb9;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+input{
+    width:95%!important;
+    font-size: 12px;
+    background-color:white!important;
+    border: none!important;
+    /*border-bottom:2px solid rgba(0, 0, 0, 0.651)!important;*/
+}
+label{
+    font-size:15px;
+    color:rgba(0, 0, 0, 0.678);
+}
+@media only screen and (max-width: 700px){
+    .formulario{
+        margin-top: 5%;
+        width: 90%;
+    }
+}
