@@ -30,8 +30,8 @@
                 <?= $mensaje ?>
             </p>
             <?php endif;?>
-            <div class="container" style="display: flex; justify-content:center;margin-top:5%;">
-                <form class="row g-3" method="POST" action="my_account.php">
+            <div class="container" style="display: flex; justify-content:center;margin-top:2%;">
+                <form class="row g-3 bg-light" method="POST" action="my_account.php">
                     <div class="col-md-6">
                         <label for="inputEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="inputEmail" name="email" value="<?= $user['email']?>" disabled="" required>

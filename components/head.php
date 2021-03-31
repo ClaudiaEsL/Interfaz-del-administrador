@@ -11,8 +11,10 @@
         if(empty($_COOKIE['_cookietema'])) $style = "menu";
         if(!empty($_COOKIE['_cookietema'])) $form = $_COOKIE['_cookietema'];
         if(empty($_COOKIE['_cookietema'])) $fomr = "formularios";
+        if(!empty($_COOKIE['_cookietema'])) $tables = $_COOKIE['_cookietema'];
+        if(empty($_COOKIE['_cookietema'])) $tables = "tables";
 	?>
 	<link rel="stylesheet" href="css/styles/<?php echo $style ?>.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/styles/<?php echo $form ?>.css" type="text/css" media="all">
-
+    <link rel="stylesheet" href="css/styles/<?php echo $tables ?>.css" type="text/css" media="all">
 </head>

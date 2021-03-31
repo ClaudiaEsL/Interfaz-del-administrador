@@ -10,9 +10,10 @@ body{
     flex-direction: row;
 }
 .contenedor-menu{
+    z-index: 1;
     min-width: 250px;
     background: rgb(105,34,247);
-    height: 100%;
+    height: 10%;
     box-shadow: 0px 1px 10px -6px rgb(0, 0, 0);
 }
 #menu{
@@ -85,6 +86,7 @@ a:hover, .menu ul li:hover{
 }
 /*Barra de sesion */
 .sesion{
+    width:100%;
     height: 50px;
     display:flex;
     justify-content: space-between;

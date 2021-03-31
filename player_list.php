@@ -14,51 +14,51 @@
 
         <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Jugadores registrados</h3>
             <div class="container" style="display:flex;justify-content:center;">
-                <table class="table table-striped table-hover"  style="max-width: 90%;height:200px!important;">
+                <table id="tabla" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido Paterno</th>
-                            <th>Apellido Materno</th>
-                            <th>Lugar de Nacimineto</th>
-                            <th>Fecha de nacimiento</th>
-                            <th>Categoria</th>
-                            <th>Examenes</th>
-                            <th>Posicion</th>
-                            <th>Entrenador</th>
-                            <th>Acciones</th>
+                            <th scope="col" >ID</th>
+                            <th scope="col" >Nombre</th>
+                            <th scope="col" >Apellido Paterno</th>
+                            <th scope="col" >Apellido Materno</th>
+                            <th scope="col" >Lugar de Nacimineto</th>
+                            <th scope="col" >Fecha de nacimiento</th>
+                            <th scope="col" >Categoria</th>
+                            <th scope="col" >Examenes</th>
+                            <th scope="col" >Posicion</th>
+                            <th scope="col" >Entrenador</th>
+                            <th scope="col" >Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
+                        <?php
                         $sql = "SELECT * FROM  jugador";
                         $resultado = mysqli_query($conn,$sql);
                         while ($filas = mysqli_fetch_assoc($resultado)) {
-                    ?>
+                        ?>
                          <tr>
-                            <th><?php echo $filas['id_jugador'] ?></th>
-                            <th><?php echo $filas['nombre'] ?></th>
-                            <th><?php echo $filas['ap_paterno'] ?></th>
-                            <th><?php echo $filas['ap_materno'] ?></th>
-                            <th><?php echo $filas['lugar_nac'] ?></th>
-                            <th><?php echo $filas['fecha_nac'] ?></th>
-                            <th><?php echo $filas['id_categoria01'] ?></th>
-                            <th><?php echo $filas['id_examen01'] ?></th>
-                            <th><?php echo $filas['id_posicion01'] ?></th>
-                            <th><?php echo $filas['id_cuerpo_tecnico01'] ?></th>
-                            <th>
-                            <?php echo "<a class='btn btn-primary' style='width:100%;color:white;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Ver test</a>"; ?>
-                            <?php echo "<a class='btn btn-warning' style='width:100%;color:white;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Editar</a>"; ?>
-                            <?php echo "<a class='btn btn-danger' style='width:100%;color:white;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' >Eliminar</a>"; ?>
+                            <th><?=$filas['id_jugador'] ?></th>
+                            <td><?=$filas['nombre'] ?></th>
+                            <td><?=$filas['ap_paterno'] ?></th>
+                            <td><?=$filas['ap_materno'] ?></th>
+                            <td><?=$filas['lugar_nac'] ?></th>
+                            <td><?=$filas['fecha_nac'] ?></th>
+                            <td><?=$filas['id_categoria01'] ?></th>
+                            <td><?=$filas['id_examen01'] ?></th>
+                            <td><?=$filas['id_posicion01'] ?></th>
+                            <td><?=$filas['id_cuerpo_tecnico01'] ?></th>
+                            <th style="width: 10%;display:flex;">
+                            <?php echo "<a title='Ver los tesd de=' class='btn btn-primary' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Test</a>"; ?>
+                            <?php echo "<a title='Editar registro' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-pencil-square'></i></a>"; ?>
+                            <?php echo "<a title='Eliminar registro' class='btn btn-danger' style='color:white; margin-left:1%;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' ><i class='bi bi-trash-fill'></i></a>"; ?>
                             </th>
                         </tr>
                         <?php
                         }
-                    ?>
+                        ?>
                     </tbody>
                 </table>
-            </div>  
+            </div>
         </div>
     </div>
     <?php require 'components/footer.php';?>

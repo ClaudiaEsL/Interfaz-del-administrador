@@ -1,0 +1,24 @@
+#tabla{
+    max-height: 200px;
+    max-width: 80%;
+    min-width:50%;
+    overflow: scroll;
+}
+#tabla thead tr{
+    background-color: rgb(231, 238, 130);
+}
+#tabla thead tr th{
+    background-color: rgba(200, 218, 255, 0.76);
+    font-size:14px;
+}
+#tabla tbody tr th{
+    font-size:13px;
+    font-weight: normal;
+}
+#tabla tbody tr td{
+    font-size:13px;
+    font-weight: normal;
+}
+#tabla tbody tr th a{
+    font-size:14px;
+}

@@ -14,7 +14,7 @@
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Cuerpo de tecnico</h3>
             <div class="container" style="display:flex;justify-content:center;">
-                <table class="table table-striped table-hover"  style="max-width: 90%;">
+                <table id="tabla" class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
