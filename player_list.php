@@ -12,10 +12,9 @@
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
         <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
 
-            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Cuerpo de tecnico</h3>
-            <div class="container">
-                
-                <table class="table table-striped table-hover">
+        <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Jugadores registrados</h3>
+            <div class="container" style="display:flex;justify-content:center;">
+                <table class="table table-striped table-hover"  style="max-width: 90%;height:200px!important;">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -49,8 +48,9 @@
                             <th><?php echo $filas['id_posicion01'] ?></th>
                             <th><?php echo $filas['id_cuerpo_tecnico01'] ?></th>
                             <th>
-                            <?php echo "<a class='btn btn-warning' style='width:100%;color:white;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>EDITAR</a>"; ?>
-                            <?php echo "<a class='btn btn-danger' style='width:100%;color:white;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' >ELIMINAR</a>"; ?>
+                            <?php echo "<a class='btn btn-primary' style='width:100%;color:white;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Ver test</a>"; ?>
+                            <?php echo "<a class='btn btn-warning' style='width:100%;color:white;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Editar</a>"; ?>
+                            <?php echo "<a class='btn btn-danger' style='width:100%;color:white;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' >Eliminar</a>"; ?>
                             </th>
                         </tr>
                         <?php

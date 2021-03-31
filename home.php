@@ -13,8 +13,8 @@
         <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Cuerpo de tecnico</h3>
-            <div class="container">
-                <table class="table table-striped table-hover"  style="width: 10%;">
+            <div class="container" style="display:flex;justify-content:center;">
+                <table class="table table-striped table-hover"  style="max-width: 90%;">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

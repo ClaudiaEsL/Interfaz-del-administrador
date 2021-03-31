@@ -3,43 +3,49 @@
 
     /*Registrar nuevos usuarios*/
     if(isset($_POST['enviar'])){
-        $id_jugador=$_POST['id_jugador'];
-        $nombre=$_POST['nombre'];
-        $apellido_p=$_POST['apellido_p'];
-        $apellido_m=$_POST['apellido_m'];
-        $lugar_nacimiento =$_POST['lugar_nacimiento'];
-        $fecha_nacimiento=$_POST['fecha_nacimiento'];
-        $id_categoria=$_POST['id_categoria'];
-        $id_examen=$_POST['id_examen'];
-        $id_posicion=$_POST['id_posicion'];
-        $id_cuerpo_tecnico=$_POST['id_cuerpo_tecnico'];
-
-    /*FORMULARIO JUGADOR*/
-        require 'php/conexion.php';
-        $records = $conn->prepare("SELECT * FROM jugador WHERE  id_jugador = '$id_jugador'");
-        $records->execute();
-        $results = $records->get_result()->fetch_assoc();
-        if($results>0){
-            echo "<script language='JavaScript'>
-                alert('Error: El ID ingresado ya existe. Intentelo nuevamente');
-                </script>";
-        }else{
-            $sql="INSERT INTO jugador(id_jugador, nombre, ap_paterno, ap_materno, lugar_nac, fecha_nac, id_categoria01, id_examen01, id_posicion01, id_cuerpo_tecnico01)VALUES('".$id_jugador."','".$nombre."','".$apellido_p."',
-         '".$apellido_m."','".$lugar_nacimiento."','".$fecha_nacimiento."','".$id_categoria."','".$id_examen."',
-         '".$id_posicion."', '".$id_cuerpo_tecnico."')";
-
-        $resultado=mysqli_query($conn,$sql);
-            if($resultado){
+        $revisar = getimagesize($_FILES['image']['tmp_name']);
+        if($revisar !== false){
+            $image = $_FILES['image']['tmp_name'];
+            $imgContenido = addslashes(file_get_contents($image));
+            $id_jugador=$_POST['id_jugador'];
+            $nombre=$_POST['nombre'];
+            $apellido_p=$_POST['apellido_p'];
+            $apellido_m=$_POST['apellido_m'];
+            $lugar_nacimiento =$_POST['lugar_nacimiento'];
+            $fecha_nacimiento=$_POST['fecha_nacimiento'];
+            $id_categoria=$_POST['id_categoria'];
+            $id_examen=$_POST['id_examen'];
+            $id_posicion=$_POST['id_posicion'];
+            $id_cuerpo_tecnico=$_POST['id_cuerpo_tecnico'];
+            /*FORMULARIO JUGADOR*/
+            require 'php/conexion.php';
+            $records = $conn->prepare("SELECT * FROM jugador WHERE  id_jugador = '$id_jugador'");
+            $records->execute();
+            $results = $records->get_result()->fetch_assoc();
+            if($results>0){
                 echo "<script language='JavaScript'>
-                alert('Los datos fueron guardados exitosamente en la DB')
-                location.assing('index.php');
-                </script>";
+                    alert('Error: El ID ingresado ya existe. Intentelo nuevamente');
+                    </script>";
             }else{
-                 echo "<script language='JavaScript'>
-                alert('Error: Los datos no fueron guardados. Intentelo nuevamente');
-                </script>";
+                $sql="INSERT INTO jugador(id_jugador, nombre, ap_paterno, ap_materno, lugar_nac, fecha_nac, id_categoria01, id_examen01, id_posicion01, id_cuerpo_tecnico01, imagen)VALUES('".$id_jugador."','".$nombre."','".$apellido_p."',
+            '".$apellido_m."','".$lugar_nacimiento."','".$fecha_nacimiento."','".$id_categoria."','".$id_examen."',
+            '".$id_posicion."', '".$id_cuerpo_tecnico."', '".$imgContenido."')";
+
+            $resultado=mysqli_query($conn,$sql);
+                if($resultado){
+                    echo "<script language='JavaScript'>
+                    alert('Los datos fueron guardados exitosamente en la DB');
+                    </script>";
+                }else{
+                    echo "<script language='JavaScript'>
+                    alert('Error: Los datos no fueron guardados. Intentelo nuevamente');
+                    </script>";
+                }
             }
         }
+        
+
+    
         mysqli_close($conn);
     }
     /*Cargar datos del cuerpo tecnico*/
@@ -62,11 +68,14 @@
             <!---->
             <div class="container" style="display: flex; justify-content:center;">
                 <!--Formulario para registrar al jugador-->
-                <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;">
+                <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                     <div class="col-12">
                         <input type="text" name="id_jugador" class="form-control" placeholder="Id_jugador"  required>
                     </div>
                     <div class="col-12">
+                    <div class="col-sm-8">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                    </div>
                         <input type="text" name="nombre" class="form-control" placeholder="Nombre"  required>
                     </div>
                     <div class="col-12">

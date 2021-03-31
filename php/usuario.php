@@ -82,4 +82,12 @@ class usuario {
         }
         return $mensaje_verificacion;
     }
+    /*Funcion buscar un jugador */
+    public static function search($id){
+        require 'php/conexion.php';
+        $records = $conn->prepare("SELECT nombre, ap_paterno, ap_materno, lugar_nac, fecha_nac, imagen FROM jugador WHERE  id_jugador = '$id'");
+        $records->execute();
+        $results = $records->get_result()->fetch_assoc();
+        return $results;
+    }
 }
