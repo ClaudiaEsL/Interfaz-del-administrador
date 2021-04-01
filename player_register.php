@@ -7,49 +7,33 @@
         if($revisar !== false){
             $image = $_FILES['image']['tmp_name'];
             $imgContenido = addslashes(file_get_contents($image));
-            $id_jugador=$_POST['id_jugador'];
             $nombre=$_POST['nombre'];
             $apellido_p=$_POST['apellido_p'];
             $apellido_m=$_POST['apellido_m'];
             $lugar_nacimiento =$_POST['lugar_nacimiento'];
             $fecha_nacimiento=$_POST['fecha_nacimiento'];
             $id_categoria=$_POST['id_categoria'];
-            $id_examen=$_POST['id_examen'];
             $id_posicion=$_POST['id_posicion'];
             $id_cuerpo_tecnico=$_POST['id_cuerpo_tecnico'];
-            /*FORMULARIO JUGADOR*/
-            require 'php/conexion.php';
-            $records = $conn->prepare("SELECT * FROM jugador WHERE  id_jugador = '$id_jugador'");
-            $records->execute();
-            $results = $records->get_result()->fetch_assoc();
-            if($results>0){
-                echo "<script language='JavaScript'>
-                    alert('Error: El ID ingresado ya existe. Intentelo nuevamente');
-                    </script>";
-            }else{
-                $sql="INSERT INTO jugador(id_jugador, nombre, ap_paterno, ap_materno, fotografia, lugar_nac, fecha_nac, id_categoria01, id_posicion01, id_cuerpo_tecnico01)VALUES('".$id_jugador."','".$nombre."','".$apellido_p."',
-            '".$apellido_m."', '".$imgContenido."','".$lugar_nacimiento."','".$fecha_nacimiento."','".$id_categoria.",
-            '".$id_posicion."', '".$id_cuerpo_tecnico."')";
 
-            $resultado=mysqli_query($conn,$sql);
-                if($resultado){
-                    echo "<script language='JavaScript'>
+            /*FORMULARIO JUGADOR*/
+            
+            $records = $conn->prepare("INSERT INTO `jugador` (`id_jugador`, `nombre`, `ap_paterno`, `ap_materno`, 
+            `fotografia`, `lugar_nac`, `fecha_nac`, `id_categoria01`, `id_posicion01`, `id_director_tecnico01`) 
+            VALUES (NULL, '$nombre', '$apellido_p', '$apellido_m', '$imgContenido', 
+            '$lugar_nacimiento', '$fecha_nacimiento', '$id_categoria', '$id_posicion', '$id_cuerpo_tecnico')");
+            if($records-> execute()){
+                echo "<script language='JavaScript'>
                     alert('Los datos fueron guardados exitosamente en la DB');
                     </script>";
-                }else{
-                    echo "<script language='JavaScript'>
-                    alert('Error: Los datos no fueron guardados. Intentelo nuevamente');
-                    </script>";
-                }
+            }
+            else{
+                echo "<script language='JavaScript'>
+                alert('Error: Los datos no fueron guardados. Intentelo nuevamente');
+                </script>";
             }
         }
-        
-
-    
-        mysqli_close($conn);
     }
-    /*Cargar datos del cuerpo tecnico*/
-    
 ?>
 
 
@@ -89,12 +73,12 @@
                     </div>
                     <div class="col-12">
                         <label for="inputcargo" class="form-label">Categoria:</label><br>
-                        <select name="id_categoria" id="inputcargo" required >
+                        <select class="form-select form-select-sm"  name="id_categoria" id="inputcargo" required >
                         <?php
-                            $consulta =  mysqli_query($conn,"SELECT id_categoria, nombre FROM categoria");
-                            while($datos = mysqli_fetch_array($consulta)){
+                            $consulta1 =  mysqli_query($conn,"SELECT id_categoria, nombre FROM categoria");
+                            while($categoria = mysqli_fetch_array($consulta1)){
                         ?>
-                            <option  value="<?= $datos['id_categoria']?>"><?= $datos['nombre']?></option>
+                            <option  value="<?= $categoria['id_categoria']?>"><?= $categoria['nombre']?></option>
                         <?php
                             }
                         ?>
@@ -102,12 +86,12 @@
                     </div>
                     <div class="col-12">
                         <label for="inputcargo" class="form-label">Posicion:</label><br>
-                        <select name="id_categoria" id="inputcargo" required >
+                        <select class="form-select form-select-sm"  name="id_posicion" id="inputcargo" required >
                         <?php
-                            $consulta =  mysqli_query($conn,"SELECT id_pocision, nombre FROM posicion");
-                            while($datos = mysqli_fetch_array($consulta)){
+                            $consulta2 =  mysqli_query($conn,"SELECT id_pocision, nombre FROM posicion");
+                            while($posicion = mysqli_fetch_array($consulta2)){
                         ?>
-                            <option  value="<?= $datos['id_pocision']?>"><?= $datos['nombre']?></option>
+                            <option  value="<?= $posicion['id_pocision']?>"><?= $posicion['nombre']?></option>
                         <?php
                             }
                         ?>
@@ -115,18 +99,17 @@
                     </div>
                     <div class="col-12">
                         <label for="inputcargo" class="form-label">Entrenador:</label><br>
-                        <select name="id_cuerpo_tecnico" id="inputcargo" required >
+                        <select class="form-select form-select-sm"  name="id_cuerpo_tecnico" id="inputcargo" required >
                         <?php
-                            $consulta =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '1'");
-                            while($datos = mysqli_fetch_array($consulta)){
+                            $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '1'");
+                            while($entrenador = mysqli_fetch_array($consulta3)){
                         ?>
-                            <option  value="<?= $datos['id_pocision']?>"><?= $datos['nombre']?></option>
+                            <option  value="<?= $entrenador['id_cuerpo_tecnico']?>"><?= $entrenador['nombre']?></option>
                         <?php
                             }
                         ?>
                         </select>
                     </div>
-                    <ul class="error" id="error"></ul>
                     <input type="submit" class="btn btn-primary" name="enviar" value="Enviar" style="width:100%;" required>
                 </form>
             </div>

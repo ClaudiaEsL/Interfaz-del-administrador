@@ -8,7 +8,7 @@
     <h5>Bienvenido usuario <?= $user['nombre']?></h5> 
 </div>
 <div class="cerrar_sesion">
-    <h5><a type="button" href="close_sesion.php" style="color:white;">Salir</a></h5>
+    <h5><a title="Cerrar sesion" type="button" href="close_sesion.php" style="color:white;">Salir</a></h5>
 </div>
 <?php else:
     require 'index.php';

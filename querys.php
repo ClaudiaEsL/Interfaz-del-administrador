@@ -1,6 +1,7 @@
 <?php
     require 'components/verify_sesion.php';
-
+    /*Clase para las consultas*/
+    include ("php/consultas.php");
     /*Cargar datos del cuerpo tecnico*/
     $records = $conn->prepare("SELECT id_cargo, nombre FROM cargo");
     $records->execute();
@@ -12,7 +13,7 @@
     {
         $verificacion = "El usuario fue encontrado";
         $id = $_POST['buscar'];
-        $encontrado = usuario::search($id);
+        $encontrado = consultas::ver_datos($id);
     }
 ?>
 <!DOCTYPE html>
@@ -55,12 +56,13 @@
                 </div>
             <?php
             else:?>
-                <div class="text-center tarjeta" style="height:500px;width: 100%;display: flex; justify-content:center;">
-                    <div class="card bg-secondary" style="max-width: 500px;max-height:100px;text-align:center;">
-                    <?php echo '<img class="card-img-top"" src="data:image/jpeg;base64,'.base64_encode($encontrado["imagen"]).'"/>';?>
-                        <div class="card-body ">
-                            <h5 class="card-title"><?= $encontrado['nombre'];?></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="text-center" style="height:500px;width: 100%;display: flex; justify-content:center;">
+                    <div class="border" style="display:flex;padding:1;max-width: 600px;max-height:400px;text-align:center;">
+                        <?php echo '<img width="300px" class="rounded float-start"  src="data:image/jpeg;base64,'.base64_encode($encontrado["fotografia"]).'"/>';?>
+                        <div class="card-body bg-light">
+                            <h5 class="card-title"><?= $encontrado['jugador'];?> </h5>
+                            <p class="card-text">Posicion: <?= $encontrado['posicion'];?> </p>
+                            <p class="card-text">Categoria: <?= $encontrado['categoria'];?> </p>
                             <a href="#" class="btn btn-primary">Ver examenes</a>
                         </div>
                     </div>

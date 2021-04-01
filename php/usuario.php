@@ -71,13 +71,13 @@ class usuario {
         }
     }
     /*Actualizar registros del jugador*/
-    public static function update_player($id, $nombre, $apellido_p, $apellido_m,$lugar_nacimiento, $fecha_nacimiento, $id_categoria, $id_examen, $id_posicion, $id_cuerpo_tecnico) {
+    public static function update_player($id, $nombre, $apellido_p, $apellido_m,$lugar_nacimiento, $fecha_nacimiento, $id_categoria, $id_posicion, $id_cuerpo_tecnico) {
         require 'php/conexion.php';
         $mensaje_verificacion = "";
 
         $sql= "UPDATE jugador SET  nombre='".$nombre."',ap_paterno='".$apellido_p."', ap_materno='".$apellido_m."' ,
-            lugar_nac='".$lugar_nacimiento."' , fecha_nac='".$fecha_nacimiento."' , id_categoria01='".$id_categoria."' ,
-            id_examen01='".$id_examen."', id_posicion01='".$id_posicion."', id_cuerpo_tecnico01='".$id_cuerpo_tecnico."'
+            lugar_nac='".$lugar_nacimiento."' , fecha_nac='".$fecha_nacimiento."' , id_categoria01='".$id_categoria."' 
+            , id_posicion01='".$id_posicion."', id_director_tecnico01='".$id_cuerpo_tecnico."'
             WHERE id_jugador='".$id."' ";
         $resultado=mysqli_query($conn,$sql);
 
@@ -92,7 +92,7 @@ class usuario {
     /*Funcion buscar un jugador */
     public static function search($id){
         require 'php/conexion.php';
-        $records = $conn->prepare("SELECT nombre, ap_paterno, ap_materno, lugar_nac, fecha_nac, imagen FROM jugador WHERE  id_jugador = '$id'");
+        $records = $conn->prepare("SELECT * FROM jugador WHERE  id_jugador = '$id'");
         $records->execute();
         $results = $records->get_result()->fetch_assoc();
         return $results;

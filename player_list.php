@@ -24,7 +24,6 @@
                             <th scope="col" >Lugar de Nacimineto</th>
                             <th scope="col" >Fecha de nacimiento</th>
                             <th scope="col" >Categoria</th>
-                            <th scope="col" >Examenes</th>
                             <th scope="col" >Posicion</th>
                             <th scope="col" >Entrenador</th>
                             <th scope="col" >Acciones</th>
@@ -44,9 +43,8 @@
                             <td><?=$filas['lugar_nac'] ?></th>
                             <td><?=$filas['fecha_nac'] ?></th>
                             <td><?=$filas['id_categoria01'] ?></th>
-                            <td><?=$filas['id_examen01'] ?></th>
                             <td><?=$filas['id_posicion01'] ?></th>
-                            <td><?=$filas['id_cuerpo_tecnico01'] ?></th>
+                            <td><?=$filas['id_director_tecnico01'] ?></th>
                             <th style="width: 10%;display:flex;">
                             <?php echo "<a title='Ver los tesd de=' class='btn btn-primary' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'>Test</a>"; ?>
                             <?php echo "<a title='Editar registro' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-pencil-square'></i></a>"; ?>

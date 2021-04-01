@@ -9,7 +9,7 @@
         <div class="opciones">
             <ul id="opciones-ul">
                 <!--Option 1-->
-                <li id="myaccount"><a href="my_account.php"><img src="img/user.jpg" alt="" width="70" style="border-radius: 50%;"></a></li>
+                <li id="myaccount"><a title="Mi cuenta" href="my_account.php"><img src="img/user.jpg" alt="" width="70" style="border-radius: 50%;"></a></li>
                 <!--Option 2-->
                 <li data-toggle="collapse" data-target="#opciones"  style="cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
                     Cuerpo tecnico <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>

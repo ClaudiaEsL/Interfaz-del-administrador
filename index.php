@@ -29,11 +29,11 @@ else{
         $stmt = $conn->prepare("SELECT * FROM `usuario` WHERE usuario='$usuario' OR email = '$usuario'");
         $stmt->execute();
         if ($datos = $stmt->get_result()->fetch_assoc()) {
-            $hash = $datos['contraseña'];
+            $hash = $datos['contrasenia'];
             $resultado = usuario::verificar_contraseña($contraseña, $hash);
             if($resultado == true){
                 $_SESSION['id'] = $datos['id_usuario'];
-                header("Location: home.php");
+                header("Location: user_list.php");
             }
             else{
                 $mensaje = "Contraseña incorrecta";
@@ -61,8 +61,11 @@ else{
     <?php
     if(!empty($_COOKIE['_cookietema'])) $menu = $_COOKIE['_cookietema'];
     if(empty($_COOKIE['_cookietema'])) $menu = "logo-index";
+    if(!empty($_COOKIE['_cookietema'])) $footer = $_COOKIE['_cookietema'];
+    if(empty($_COOKIE['_cookietema'])) $footer = "footer";
     ?>
     <link rel="stylesheet" href="css/styles/<?php echo $menu ?>.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/styles/<?php echo $footer ?>.css" type="text/css" media="all">
     <title>Login</title>
 </head>
 <body style="background-image:url(./img/soccer-ball-going-into-net-goal-vector.jpg)">
@@ -83,7 +86,7 @@ else{
                     <?php endif;?>
                     <div class="mb-5">
                         <label for="usuario" class="form-label">Usuario:</label>
-                        <input type="text" class="form-control" id="usuario" aria-describedby="inputGroupPrepend" required name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
+                        <input type="text" class="form-control" id="usuario" aria-describedby="inputGroupPrepend" required name="usuario" id="usuario" placeholder="Ingrese su usuario o email" required>
                             <div class="invalid-feedback">
                               Por favor introduzca un usuario
                             </div>
