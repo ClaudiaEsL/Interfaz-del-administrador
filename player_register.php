@@ -104,18 +104,27 @@
                         <label for="inputcargo" class="form-label">Posicion:</label><br>
                         <select name="id_categoria" id="inputcargo" required >
                         <?php
-                            $consulta =  mysqli_query($conn,"SELECT id_posicion, nombre FROM posicion");
+                            $consulta =  mysqli_query($conn,"SELECT id_pocision, nombre FROM posicion");
                             while($datos = mysqli_fetch_array($consulta)){
                         ?>
-                            <option  value="<?= $datos['id_posicion']?>"><?= $datos['nombre']?></option>
+                            <option  value="<?= $datos['id_pocision']?>"><?= $datos['nombre']?></option>
                         <?php
                             }
                         ?>
                         </select>
-                           <input type="text" name="id_posicion" class="form-control" placeholder="Posicion"  required>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="id_cuerpo_tecnico" class="form-control" placeholder="Entrenador"  required>
+                        <label for="inputcargo" class="form-label">Entrenador:</label><br>
+                        <select name="id_cuerpo_tecnico" id="inputcargo" required >
+                        <?php
+                            $consulta =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '1'");
+                            while($datos = mysqli_fetch_array($consulta)){
+                        ?>
+                            <option  value="<?= $datos['id_pocision']?>"><?= $datos['nombre']?></option>
+                        <?php
+                            }
+                        ?>
+                        </select>
                     </div>
                     <ul class="error" id="error"></ul>
                     <input type="submit" class="btn btn-primary" name="enviar" value="Enviar" style="width:100%;" required>
