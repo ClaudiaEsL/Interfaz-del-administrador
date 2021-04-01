@@ -3,7 +3,7 @@ class usuario {
     /*Funcion devolver datos del usuario*/
     public static function get($id){
         require 'php/conexion.php';
-        $records = $conn->prepare("SELECT nombre, email, usuario, contraseña, id_cuerpo_tecnico FROM cuerpo_tecnico WHERE  id_cuerpo_tecnico = '$id'");
+        $records = $conn->prepare("SELECT * FROM usuario WHERE  id_usuario = '$id'");
         $records->execute();
         $results = $records->get_result()->fetch_assoc();
         return $results;
@@ -26,7 +26,7 @@ class usuario {
         require 'php/conexion.php';
         $verificacion = false ;
         $hash = password_hash($password, PASSWORD_BCRYPT);
-        $records = $conn->prepare("UPDATE cuerpo_tecnico SET contraseña = '$hash' WHERE id_cuerpo_tecnico = '$id'");
+        $records = $conn->prepare("UPDATE usuario SET contrasenia = '$hash' WHERE id_usuario = '$id'");
         if($records-> execute()){
             $verificacion = true;
         }
@@ -47,15 +47,22 @@ class usuario {
             return "Datos no eliminados";
         }
     }
-    /*agregar registros*/
-    public static function agregar_usuarios($nombre, $email, $usuario, $password, $id, $cargo){
-        $var = usuario::get($id);
-        if($var>0){
-            return "El id ingresado ya existe. Datos no registrados";
-        }
+    /*agregar usuarios*/
+    public static function agregar_usuarios($nombre, $email, $usuario, $password, $cargo){
         $hash = password_hash($password, PASSWORD_BCRYPT);
         require 'php/conexion.php';
-        $records = $conn->prepare("INSERT INTO cuerpo_tecnico(id_cuerpo_tecnico, nombre, email, usuario, contraseña, id_cargo01) VALUES ('$id', '$nombre', '$email', '$usuario','$hash', '$cargo')");
+        $records = $conn->prepare("INSERT INTO usuario(nombre, email, usuario, contrasenia, id_rol01) VALUES ('$nombre', '$email', '$usuario','$hash', '$cargo')");
+        if($records-> execute()){
+            return "Datos ingresados exitosamente";
+        }
+        else{
+            return "Ocurrio un error. Datos no registrados";
+        }
+    }
+    /*agregar personal*/
+    public static function agregar_personal($nombre, $fech_nac, $ci, $tel, $fech_con, $cargo){
+        require 'php/conexion.php';
+        $records = $conn->prepare("INSERT INTO cuerpo_tecnico(nombre, fecha_nac, num_documento, fecha_contratacion, telefono, id_cargo01) VALUES ('$nombre', '$fech_nac', '$ci', '$fech_con','$tel','$cargo')");
         if($records-> execute()){
             return "Datos ingresados exitosamente";
         }

@@ -26,13 +26,13 @@ else{
     if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
         $usuario = $_POST['usuario'];
         $contraseña = $_POST['password'];
-        $stmt = $conn->prepare("SELECT email, usuario, contraseña, id_cuerpo_tecnico FROM cuerpo_tecnico WHERE usuario='$usuario' OR email = '$usuario'");
+        $stmt = $conn->prepare("SELECT * FROM `usuario` WHERE usuario='$usuario' OR email = '$usuario'");
         $stmt->execute();
         if ($datos = $stmt->get_result()->fetch_assoc()) {
             $hash = $datos['contraseña'];
             $resultado = usuario::verificar_contraseña($contraseña, $hash);
             if($resultado == true){
-                $_SESSION['id'] = $datos['id_cuerpo_tecnico'];
+                $_SESSION['id'] = $datos['id_usuario'];
                 header("Location: home.php");
             }
             else{

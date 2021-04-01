@@ -19,22 +19,28 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Usuario</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">CI</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Fecha de contratacion</th>
+                            <th scope="col">Cargo</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             $id = $user['nombre'];
-                            $consulta =  mysqli_query($conn,"SELECT nombre, id_cuerpo_tecnico, usuario, email FROM cuerpo_tecnico WHERE nombre != '$id'");
+                            $consulta =  mysqli_query($conn,"SELECT * FROM cuerpo_tecnico");
                             while($personas = mysqli_fetch_array($consulta)){
                         ?>
                          <tr>
                             <th><?= $personas['id_cuerpo_tecnico']?></th>
                             <td><?= $personas['nombre']?></td>
-                            <td><?= $personas['usuario']?></td>
-                            <td><?= $personas['email']?></td>
+                            <td><?= $personas['fecha_nac']?></td>
+                            <td><?= $personas['num_documento']?></td>
+                            <td><?= $personas['telefono']?></td>
+                            <td><?= $personas['fecha_contratacion']?></td>
+                            <td><?= $personas['id_cargo01']?></td>
                             <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$personas['id_cuerpo_tecnico']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
                         </tr>
                         <?php

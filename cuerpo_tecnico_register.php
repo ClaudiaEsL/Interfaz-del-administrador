@@ -2,8 +2,8 @@
     require 'components/verify_sesion.php';
 
     /*Registrar nuevos usuarios*/
-    if(isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['usuario']) && isset($_POST['contraseña']) && isset($_POST['id']) && isset($_POST['cargo'])){
-        $mensaje = usuario::agregar_usuarios($_POST['nombre'],$_POST['email'], $_POST['usuario'], $_POST['contraseña'], $_POST['id'], $_POST['cargo'] );
+    if(isset($_POST['nombre']) && isset($_POST['fech_nac']) && isset($_POST['ci']) && isset($_POST['tel']) && isset($_POST['fech_con']) && isset($_POST['cargo'])){
+        $mensaje = usuario::agregar_personal($_POST['nombre'],$_POST['fech_nac'], $_POST['ci'], $_POST['tel'], $_POST['fech_con'], $_POST['cargo'] );
     }
     /*Cargar datos del cuerpo tecnico*/
     $records = $conn->prepare("SELECT id_cargo, nombre FROM cargo");
@@ -20,31 +20,31 @@
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
         <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
 
-            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar nuevo usuario</h3>
+            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar al cuerpo tecnico</h3>
             <!--Mensaje de registro-->
             <?php require 'components/mensaje_registro.php';?>
             <!---->
             <div class="container" style="display: flex; justify-content:center;">
-                <form class="formularios row g-4 bg-light" method="POST" action="register_users.php" style="margin-top:1%;">
+                <form class="formularios row g-4 bg-light" method="POST" action="cuerpo_tecnico_register.php" style="margin-top:1%;">
                     <div class="col-12">
                         <label for="inputname" class="form-label">Nombre:</label>
                         <input type="text" class="form-control" id="inputname" name="nombre" required autofocus>
                     </div>
                     <div class="col-md-6 ">
-                        <label for="inputEmail" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email"  required>
+                        <label for="inputfn" class="form-label">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control" id="inputfn" name="fech_nac"  required>
                     </div>
                     <div class="col-md-6">
-                    <label for="inputuser" class="form-label">Usuario:</label>
-                        <input type="text" class="form-control" id="inputuser" name="usuario"  required >
+                    <label for="inputci" class="form-label">CI:</label>
+                        <input type="text" class="form-control" id="inputci" name="ci"  required >
                     </div>
                     <div class="col-12">
-                        <label for="input_password" class="form-label">Contraseña:</label>
-                        <input type="password" class="form-control" id="input_password" name="contraseña" required>
+                        <label for="inputtel" class="form-label">Telefono:</label>
+                        <input type="number" class="form-control" id="inputtel" name="tel" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputid" class="form-label">Id:</label>
-                        <input type="number" class="form-control" id="inputid" name="id" required>
+                        <label for="inputc" class="form-label">Fecha de contratacion:</label>
+                        <input type="date" class="form-control" id="inputc" name="fech_con" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputcargo" class="form-label">Cargo:</label><br>

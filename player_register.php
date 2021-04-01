@@ -27,9 +27,9 @@
                     alert('Error: El ID ingresado ya existe. Intentelo nuevamente');
                     </script>";
             }else{
-                $sql="INSERT INTO jugador(id_jugador, nombre, ap_paterno, ap_materno, lugar_nac, fecha_nac, id_categoria01, id_examen01, id_posicion01, id_cuerpo_tecnico01, imagen)VALUES('".$id_jugador."','".$nombre."','".$apellido_p."',
-            '".$apellido_m."','".$lugar_nacimiento."','".$fecha_nacimiento."','".$id_categoria."','".$id_examen."',
-            '".$id_posicion."', '".$id_cuerpo_tecnico."', '".$imgContenido."')";
+                $sql="INSERT INTO jugador(id_jugador, nombre, ap_paterno, ap_materno, fotografia, lugar_nac, fecha_nac, id_categoria01, id_posicion01, id_cuerpo_tecnico01)VALUES('".$id_jugador."','".$nombre."','".$apellido_p."',
+            '".$apellido_m."', '".$imgContenido."','".$lugar_nacimiento."','".$fecha_nacimiento."','".$id_categoria.",
+            '".$id_posicion."', '".$id_cuerpo_tecnico."')";
 
             $resultado=mysqli_query($conn,$sql);
                 if($resultado){
@@ -70,12 +70,6 @@
                 <!--Formulario para registrar al jugador-->
                 <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                     <div class="col-12">
-                        <input type="text" name="id_jugador" class="form-control" placeholder="Id_jugador"  required>
-                    </div>
-                    <div class="col-12">
-                    <div class="col-sm-8">
-                        <input type="file" class="form-control" id="image" name="image" multiple>
-                    </div>
                         <input type="text" name="nombre" class="form-control" placeholder="Nombre"  required>
                     </div>
                     <div class="col-12">
@@ -84,6 +78,9 @@
                     <div class="col-12">
                         <input type="text" name="apellido_m" class="form-control" placeholder="Apellido Materno"  required>
                     </div>
+                    <div class="col-sm-8">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                    </div>
                     <div class="col-12">
                         <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Lugar De Nacimiento"  required>
                     </div>
@@ -91,12 +88,30 @@
                         <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento"  required>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="id_categoria" class="form-control" placeholder="Categoria"  required>
+                        <label for="inputcargo" class="form-label">Categoria:</label><br>
+                        <select name="id_categoria" id="inputcargo" required >
+                        <?php
+                            $consulta =  mysqli_query($conn,"SELECT id_categoria, nombre FROM categoria");
+                            while($datos = mysqli_fetch_array($consulta)){
+                        ?>
+                            <option  value="<?= $datos['id_categoria']?>"><?= $datos['nombre']?></option>
+                        <?php
+                            }
+                        ?>
+                        </select>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="id_examen" class="form-control" placeholder="Examen"  required>
-                    </div>
-                    <div class="col-12">
+                        <label for="inputcargo" class="form-label">Posicion:</label><br>
+                        <select name="id_categoria" id="inputcargo" required >
+                        <?php
+                            $consulta =  mysqli_query($conn,"SELECT id_posicion, nombre FROM posicion");
+                            while($datos = mysqli_fetch_array($consulta)){
+                        ?>
+                            <option  value="<?= $datos['id_posicion']?>"><?= $datos['nombre']?></option>
+                        <?php
+                            }
+                        ?>
+                        </select>
                            <input type="text" name="id_posicion" class="form-control" placeholder="Posicion"  required>
                     </div>
                     <div class="col-12">
