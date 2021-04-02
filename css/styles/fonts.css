@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Didact+Gothic&family=Noto+Serif&family=Roboto+Slab:wght@200;300;400&family=Yrsa&display=swap');
+.fuente-texto-1{
+    font-family: 'Alfa Slab One', cursive;
+
+}
+.fuente-texto-2{
+    font-family: 'Didact Gothic', sans-serif;
+}
+.fuente-texto-3{
+    font-family: 'Noto Serif', serif;
+}
+.fuente-texto-2{
+    font-family: 'Roboto Slab', serif;
+}
+.fuente-texto-3{
+    font-family: 'Yrsa', serif;
+}

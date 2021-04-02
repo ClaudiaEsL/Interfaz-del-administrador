@@ -24,7 +24,7 @@
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
         <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
 
-            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Buscar jugadores</h3>
+            <h3 class="text-center fuente-texto-2" style="font-size: 18px;margin-top:1%;">Buscar jugadores</h3>
             <!--Mensaje de registro-->
             <?php require 'components/mensaje_registro.php';?>
             <!---->
@@ -51,8 +51,8 @@
             <!--Campo para mostrar los datos-->
             <?php if(empty($verificacion)):?>
                 <div class="container text-center">
-                    <img src="img/icon/search.jpg" alt="" width="150px">
-                    <p>Busque un dato</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                    <p class="fuente-texto-2 text-muted" style="font-size: 1.5rem;">Busque un dato</p>
                 </div>
             <?php
             else:?>

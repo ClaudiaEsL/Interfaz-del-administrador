@@ -5,7 +5,7 @@
 </button>
 <?php if(!empty($user)):?>
 <div class="nombre_usuario">
-    <h5>Bienvenido usuario <?= $user['nombre']?></h5> 
+    <h5 class="fuente-texto-1">Bienvenido usuario <?= $user['nombre']?></h5> 
 </div>
 <div class="cerrar_sesion">
     <h5><a title="Cerrar sesion" type="button" href="close_sesion.php" style="color:white;">Salir</a></h5>

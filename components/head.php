@@ -15,9 +15,12 @@
         if(empty($_COOKIE['_cookietema'])) $tables = "tables";
         if(!empty($_COOKIE['_cookietema'])) $footer = $_COOKIE['_cookietema'];
         if(empty($_COOKIE['_cookietema'])) $footer = "footer";
+        if(!empty($_COOKIE['_cookietema'])) $fonts = $_COOKIE['_cookietema'];
+        if(empty($_COOKIE['_cookietema'])) $fonts = "fonts";
 	?>
 	<link rel="stylesheet" href="css/styles/<?php echo $style ?>.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/styles/<?php echo $form ?>.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/styles/<?php echo $tables ?>.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/styles/<?php echo $footer ?>.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/styles/<?php echo $fonts ?>.css" type="text/css" media="all">
 </head>
