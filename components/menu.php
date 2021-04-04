@@ -1,4 +1,4 @@
-<div class="menu" style="min-width: 250px;max-width: 250px;">
+<div class="menu" style="min-width: 250px;max-width: 250px;padding-bottom:5%;">
     <div class="titulo" >
         <div class="bg-light d-flex justify-content-between">
             <h5 style="font-size: 15px;" class="mx-auto p-3">Instituto de futbol</h5>
@@ -6,7 +6,7 @@
                 <i style="font-size: 20px;" class="bi bi-x"></i>
             </button>
         </div>
-        <div class="opciones">
+        <div class="opciones-menu" style="background: rgb(105,34,247);">
             <ul id="opciones-ul">
                 <!--Option 1-->
                 <li id="myaccount"><a title="Mi cuenta" href="my_account.php"><img src="img/user.jpg" alt="" width="70" style="border-radius: 50%;"></a></li>
@@ -33,8 +33,8 @@
                         <li><a href="player_register.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16"><path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/></svg>
                             Registrar jugadores</a>
                         </li>
-                        <li><a href="test_register.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-                            Realizar test</a>
+                        <li><a href="test_list.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16"><path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/></svg>
+                            Test de los jugadores</a>
                         </li>
                     </ul>
                 </li>

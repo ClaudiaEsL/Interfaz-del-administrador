@@ -32,6 +32,7 @@
                 <form class="row g-4 bg-light text-center" method="POST" action="querys.php" style="margin-top:1%;">
                     <div class="col-md-6">
                         <select class="form-select form-select-sm" name="buscar" id="inputpersonas" required >
+                        <option selected disabled>-Elija a un jugador-</option>
                         <?php
                             /*Cargar datos de jugadores*/
                             $consulta =  mysqli_query($conn,"SELECT id_jugador, nombre FROM jugador");

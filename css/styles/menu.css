@@ -11,6 +11,8 @@ body{
 }
 #menu{
     display:none;
+    z-index: 1;
+    top: 0;
 }
 .menu ul{
     display:flex;
@@ -53,7 +55,7 @@ a:hover, .menu ul li:hover{
 }
 /*Barra de sesion */
 .sesion{
-    width:100%;
+    width: 100%;
     height: 50px;
     display:flex;
     justify-content: space-between;
