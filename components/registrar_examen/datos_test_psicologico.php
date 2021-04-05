@@ -30,6 +30,8 @@
                                 <label for="efect_tactica_mental" class="form-label">E. tactica mental:</label>
                                 <input type="text" class="form-control" id="efect_tactica_mental" name="efect_tactica_mental">
                             </div>
+                        </div>
+                        <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="observaciones" class="form-label">Observaciones:</label>
                                 <textarea aria-label="With textarea" class="form-control" id="observaciones" name="observaciones"></textarea>

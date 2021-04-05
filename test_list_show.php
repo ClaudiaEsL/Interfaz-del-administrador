@@ -52,53 +52,56 @@ display: none;
             <?php require 'components/mensaje_registro.php';?>
             <!---->
             <div class="container" style="margin-top:1%;margin-bottom:5%;">
-                <h2 class="display-4">Examen de: <?=$jugador['nombre'] ?> <?= $jugador['ap_paterno']?></h2>
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <h6 class="text-dark">Ficha del examen Psicologico</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Tactica mental: <?= $examen_psicologico['efect_tactica_mental']?><br>
-                                Eleccion: <?= $examen_psicologico['eleccion']?><br>
-                                Observaciones: <?= $examen_psicologico['observaciones']?><br>
-                                Rapidez mental: <?= $examen_psicologico['rapidez']?><br>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <h6 class="text-dark">Ficha del examen Fisico</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Articulaciones: <?= $examen_fisico['articulaciones']?><br>
-                                Control de vista: <?= $examen_fisico['control_vista']?><br>
-                                Estatura: <?= $examen_fisico['estatura']?><br>
-                                Flexibilidad: <?= $examen_fisico['flexibilidad']?><br>
-                                Peso: <?= $examen_fisico['peso']?><br>
-                                Postura: <?= $examen_fisico['postura']?><br>
-                                Pulso: <?= $examen_fisico['pulso']?><br>
-                                Resistencia: <?= $examen_fisico['resistencia']?><br>
-                                Tension arterial: <?= $examen_fisico['tension_arterial']?><br>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <h6 class="text-dark">Ficha del examen de antecedentes medicos</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Alergias: <?= $examen_medico['alergias']?><br>
-                                Cirujias: <?= $examen_medico['cirugias']?><br>
-                                Enfermedades familiares: <?= $examen_medico['enfermedades_flia']?><br>
-                                Enfermedades: <?= $examen_medico['enfermedades']?><br>
-                                Lesiones: <?= $examen_medico['lesiones']?><br>
-                                Medicamentos: <?= $examen_medico['medicamentos']?><br>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <h2 clas    s="display-4">Examen de: <?=$jugador['nombre'] ?> <?= $jugador['ap_paterno']?></h2>
+                <div class="d-flex justify-content-between bg-primary p-2 text-white"><h6>Fecha de registro: <?= $examen['fecha']?></h6><h6># del examen: <?= $examen['id_examen']?></h6></div>
+                <div class="list-group border p-1">
+                    <ul class="list-group">
+                        <li class="list-group-item ">
+                            <h6 class="text-dark">Ficha del examen Psicologico</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Tactica mental: <?= $examen_psicologico['efect_tactica_mental']?><br>
+                                    Eleccion: <?= $examen_psicologico['eleccion']?><br>
+                                    Observaciones: <?= $examen_psicologico['observaciones']?><br>
+                                    Rapidez mental: <?= $examen_psicologico['rapidez']?><br>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item ">
+                            <h6 class="text-dark">Ficha del examen Fisico</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Articulaciones: <?= $examen_fisico['articulaciones']?><br>
+                                    Control de vista: <?= $examen_fisico['control_vista']?><br>
+                                    Estatura: <?= $examen_fisico['estatura']?><br>
+                                    Flexibilidad: <?= $examen_fisico['flexibilidad']?><br>
+                                    Peso: <?= $examen_fisico['peso']?><br>
+                                    Postura: <?= $examen_fisico['postura']?><br>
+                                    Pulso: <?= $examen_fisico['pulso']?><br>
+                                    Resistencia: <?= $examen_fisico['resistencia']?><br>
+                                    Tension arterial: <?= $examen_fisico['tension_arterial']?><br>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item ">
+                            <h6 class="text-dark">Ficha del examen de antecedentes medicos</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Alergias: <?= $examen_medico['alergias']?><br>
+                                    Cirujias: <?= $examen_medico['cirugias']?><br>
+                                    Enfermedades familiares: <?= $examen_medico['enfermedades_flia']?><br>
+                                    Enfermedades: <?= $examen_medico['enfermedades']?><br>
+                                    Lesiones: <?= $examen_medico['lesiones']?><br>
+                                    Medicamentos: <?= $examen_medico['medicamentos']?><br>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

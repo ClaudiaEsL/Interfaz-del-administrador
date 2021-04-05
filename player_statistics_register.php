@@ -2,6 +2,8 @@
     require 'components/verify_sesion.php';
     include("php/conexion.php");
     $id_jugador=$_GET['id_jugador'];
+    /*Seleccionar los datos del jugador */
+
     /*Registrar nuevos usuarios*/
     if(isset($_POST['enviar'])){
         

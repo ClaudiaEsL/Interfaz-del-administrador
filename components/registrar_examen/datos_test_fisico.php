@@ -18,11 +18,11 @@
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="estatura" class="form-label">Estatura:</label>
-                                <input type="number" class="form-control" id="estatura" name="estatura" >
+                                <input type="number" class="form-control" id="estatura" name="estatura" placeholder="0.00">
                             </div>
                             <div class="col p-2">
                                 <label for="peso" class="form-label">Peso:</label>
-                                <input type="number" class="form-control" id="peso" name="peso" >
+                                <input type="number" class="form-control" id="peso" name="peso" placeholder="0.00" >
                             </div>
                             <div class="col p-2">
                                 <label for="pulso" class="form-label">Pulso:</label>
