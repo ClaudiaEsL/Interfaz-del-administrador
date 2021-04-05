@@ -18,7 +18,7 @@
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
         <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
-            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar nuevo usuario</h3>
+            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar/ Ver test</h3>
             <div class="container" style="display:flex;justify-content:center;">
                 <table id="tabla" class="table table-striped table-hover">
                     <thead>
