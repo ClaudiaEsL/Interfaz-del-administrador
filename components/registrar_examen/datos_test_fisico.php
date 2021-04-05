@@ -2,7 +2,7 @@
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="preparador" class="form-label">Encargado de realizar el examen (Preparador Fisico):</label >
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="preparador" name="eleccion">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="preparador" name="preparador_fisico">
                                 <option  value="" disabled selected>-Lista de encargados registrados-</option>
                                 <?php
                                 $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '3'");
@@ -18,11 +18,11 @@
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="estatura" class="form-label">Estatura:</label>
-                                <input type="text" class="form-control" id="estatura" name="estatura" >
+                                <input type="number" class="form-control" id="estatura" name="estatura" >
                             </div>
                             <div class="col p-2">
                                 <label for="peso" class="form-label">Peso:</label>
-                                <input type="text" class="form-control" id="peso" name="peso" >
+                                <input type="number" class="form-control" id="peso" name="peso" >
                             </div>
                             <div class="col p-2">
                                 <label for="pulso" class="form-label">Pulso:</label>

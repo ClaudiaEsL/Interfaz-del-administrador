@@ -22,7 +22,7 @@
 <body>
 <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
             <h3 class="text-center fuente-texto-2" style="font-size: 18px;margin-top:1%;">Buscar jugadores</h3>
             <!--Mensaje de registro-->

@@ -16,7 +16,7 @@
 <body>
 <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar nuevo usuario</h3>
             <div class="container" style="display:flex;justify-content:center;">
@@ -37,9 +37,9 @@
                          <tr>
                             <td><?=$filas['id_jugador'] ?></th>
                             <td><?=$filas['nombre'] ?></th>
-                            <th style="width: 10%;display:flex;">
+                            <th style="width: 100%;display:flex;">
                             <?php echo "<a title=Ver test' class='btn btn-success' style='color:white; margin-left:1%;' href='test_register.php?id_jugador=".$filas['id_jugador']."'>Registrar test</a>"; ?>
-                            <?php echo "<a title='Editar test' class='btn btn-primary' style='color:white; margin-left:1%;' href='test_edit.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' >Editar test</a>"; ?>
+                            <?php echo "<a title=Ver test' class='btn btn-primary' style='color:white; margin-left:1%;' href='test_list_save.php?id_jugador=".$filas['id_jugador']."'>Ver test registrados</a>"; ?>
                             </th>
                         </tr>
                         <?php

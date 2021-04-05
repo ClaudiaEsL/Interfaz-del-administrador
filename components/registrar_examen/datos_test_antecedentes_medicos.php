@@ -2,7 +2,7 @@
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="medico" class="form-label">Encargado de realizar el examen (Medico):</label >
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="medico" name="eleccion">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="medico" name="medico">
                                 <option  value="" disabled selected>-Lista de encargados registrados-</option>
                                 <?php
                                 $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '3'");
@@ -45,4 +45,4 @@
                         </div>
                         <br>
                         <input type="button" name="previous" class="previous-form btn btn-default" value="Anterior" />
-                        <input type="submit" name="submit" class="submit btn btn-success" value="Guardar datos" />
+                        

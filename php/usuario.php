@@ -12,7 +12,7 @@ class usuario {
     public static function update($nombre, $usuario, $email, $id) {
         require 'php/conexion.php';
         $mensaje_verificacion = "";
-        $records = $conn->prepare("UPDATE cuerpo_tecnico SET nombre = '$nombre', email = '$email', usuario = '$usuario' WHERE id_cuerpo_tecnico = '$id'");
+        $records = $conn->prepare("UPDATE usuario SET nombre = '$nombre', email = '$email', usuario = '$usuario' WHERE id_usuario = '$id'");
         if($records-> execute()){
             $mensaje_verificacion = "Datos guardados exitosamente";
         }

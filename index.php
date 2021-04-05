@@ -17,7 +17,7 @@ if(isset($_SESSION['id'])){
     /*Verificar si el usuario esta registrado en la base de datos*/
     if(count($results)>0){
         $user = $results;
-        header("Location: home.php");
+        header("Location: user_list.php");
     }
 
 }

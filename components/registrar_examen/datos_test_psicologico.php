@@ -2,7 +2,7 @@
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="psicologo" class="form-label">Encargado de realizar el examen (Psicolog@):</label>
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="psicologo" name="eleccion">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="psicologo" name="psicologo">
                                 <option  value="" disabled selected>-Lista de encargados registrados-</option>
                                 <?php
                                 $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '7'");

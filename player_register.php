@@ -43,7 +43,7 @@
 <body>
 <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
         <!--Hoja de estitlo para el formulario-->
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar jugador</h3>
@@ -53,63 +53,77 @@
             <div class="container" style="display: flex; justify-content:center;">
                 <!--Formulario para registrar al jugador-->
                 <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
-                    <div class="col-12">
-                        <input type="text" name="nombre" class="form-control" placeholder="Nombre"  required>
+                    <div class="d-flex justify-content-sm-around">
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Nombre:</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre"  required>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Apellido paterno:</label>
+                            <input type="text" name="apellido_p" class="form-control" placeholder="Apellido Paterno"  required>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <input type="text" name="apellido_p" class="form-control" placeholder="Apellido Paterno"  required>
+                    <div class="d-flex justify-content-sm-around">
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Apellido materno:</label>
+                            <input type="text" name="apellido_m" class="form-control" placeholder="Apellido Materno"  required>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Imagen (Opcional):</label>
+                            <input type="file" class="form-control" id="image" name="image" multiple>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <input type="text" name="apellido_m" class="form-control" placeholder="Apellido Materno"  required>
+                    <div class="d-flex justify-content-sm-around">
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Lugar de nacimiento:</label>
+                            <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Pais, Ciudad"  required>
+                        </div>
+                        <div class="col-md-6 ">
+                            <label for="inputEmail" class="form-label">Fecha de nacimiento:</label>
+                            <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento"  required>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <input type="file" class="form-control" id="image" name="image" multiple>
-                    </div>
-                    <div class="col-12">
-                        <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Lugar De Nacimiento"  required>
-                    </div>
-                    <div class="col-12">
-                        <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento"  required>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputcargo" class="form-label">Categoria:</label><br>
-                        <select class="form-select form-select-sm"  name="id_categoria" id="inputcargo" required >
-                        <?php
-                            $consulta1 =  mysqli_query($conn,"SELECT id_categoria, nombre FROM categoria");
-                            while($categoria = mysqli_fetch_array($consulta1)){
-                        ?>
-                            <option  value="<?= $categoria['id_categoria']?>"><?= $categoria['nombre']?></option>
-                        <?php
-                            }
-                        ?>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputcargo" class="form-label">Posicion:</label><br>
-                        <select class="form-select form-select-sm"  name="id_posicion" id="inputcargo" required >
-                        <?php
-                            $consulta2 =  mysqli_query($conn,"SELECT id_pocision, nombre FROM posicion");
-                            while($posicion = mysqli_fetch_array($consulta2)){
-                        ?>
-                            <option  value="<?= $posicion['id_pocision']?>"><?= $posicion['nombre']?></option>
-                        <?php
-                            }
-                        ?>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputcargo" class="form-label">Entrenador:</label><br>
-                        <select class="form-select form-select-sm"  name="id_cuerpo_tecnico" id="inputcargo" required >
-                        <?php
-                            $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '1'");
-                            while($entrenador = mysqli_fetch_array($consulta3)){
-                        ?>
-                            <option  value="<?= $entrenador['id_cuerpo_tecnico']?>"><?= $entrenador['nombre']?></option>
-                        <?php
-                            }
-                        ?>
-                        </select>
-                    </div>
+                    <div class="d-flex justify-content-sm-around">
+                        <div class="col-md-4 ">
+                            <label for="inputcargo" class="form-label">Categoria:</label><br>
+                            <select class="form-select form-select-sm"  name="id_categoria" id="inputcargo" required >
+                            <?php
+                                $consulta1 =  mysqli_query($conn,"SELECT id_categoria, nombre FROM categoria");
+                                while($categoria = mysqli_fetch_array($consulta1)){
+                            ?>
+                                <option  value="<?= $categoria['id_categoria']?>"><?= $categoria['nombre']?></option>
+                            <?php
+                                }
+                            ?>
+                            </select>
+                        </div>
+                        <div class="col-md-4 ">
+                            <label for="inputcargo" class="form-label">Posicion:</label><br>
+                            <select class="form-select form-select-sm"  name="id_posicion" id="inputcargo" required >
+                            <?php
+                                $consulta2 =  mysqli_query($conn,"SELECT id_pocision, nombre FROM posicion");
+                                while($posicion = mysqli_fetch_array($consulta2)){
+                            ?>
+                                <option  value="<?= $posicion['id_pocision']?>"><?= $posicion['nombre']?></option>
+                            <?php
+                                }
+                            ?>
+                            </select>
+                        </div>
+                        <div class="col-md-4 ">
+                            <label for="inputcargo" class="form-label">Entrenador:</label><br>
+                            <select class="form-select form-select-sm"  name="id_cuerpo_tecnico" id="inputcargo" required >
+                            <?php
+                                $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '1'");
+                                while($entrenador = mysqli_fetch_array($consulta3)){
+                            ?>
+                                <option  value="<?= $entrenador['id_cuerpo_tecnico']?>"><?= $entrenador['nombre']?></option>
+                            <?php
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div><br>
                     <input type="submit" class="btn btn-primary" name="enviar" value="Enviar" style="width:100%;" required>
                 </form>
             </div>
