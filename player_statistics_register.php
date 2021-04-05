@@ -75,8 +75,8 @@
                 <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                     <div class="d-flex justify-content-sm-around">
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Id del jugador:</label>
-                            <input type="text" name="id_jugador" class="form-control" disabled value="<?php echo $id_jugador; ?>" >
+                            
+                            <input type="hidden" name="id_jugador" class="form-control"  value="<?php echo $id_jugador; ?>" >
                         </div>
                         <div class="col-md-4 ">
                             <label for="inputEmail" class="form-label">Partidos Jugados:</label>
