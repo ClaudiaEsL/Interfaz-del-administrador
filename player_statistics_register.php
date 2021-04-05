@@ -2,6 +2,12 @@
     require 'components/verify_sesion.php';
     include("php/conexion.php");
     $id_jugador=$_GET['id_jugador'];
+
+    /*Seleccionar los datos del jugador */
+    $records = $conn->prepare("SELECT * FROM jugador WHERE  id_jugador = '$id_jugador'");
+    $records->execute();
+    $personas = $records->get_result()->fetch_assoc();
+
     /*Registrar nuevos usuarios*/
     if(isset($_POST['enviar'])){
         
@@ -44,14 +50,10 @@
             '".$paradas_centro."','".$paradas_fuera."','".$torneo."','".$id_jugador."')");
 
             if($records-> execute()){
-                echo "<script language='JavaScript'>
-                    alert('Los datos fueron guardados exitosamente en la DB');
-                    </script>";
+                    $mensaje = "Los datos fueron registrados exitosamente";
             }
             else{
-                echo "<script language='JavaScript'>
-                alert('Error: Los datos no fueron guardados. Intentelo nuevamente');
-                </script>";
+                $mensaje = "Error: Los datos no fueron guardados. Intentelo nuevamente";
             }
         }
 ?>
@@ -72,11 +74,11 @@
             <!---->
             <div class="container" style="display:flex;justify-content:center;margin-top:1%;margin-bottom:5%;" >
                 <!--Formulario para registrar al jugador-->
-                <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
+                <form action="player_statistics_register.php?id_jugador=<?= $personas['id_jugador'];?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                     <div class="d-flex justify-content-sm-around">
                         <div class="col-md-4 ">
-                            
-                            <input type="hidden" name="id_jugador" class="form-control"  value="<?php echo $id_jugador; ?>" >
+                            <label for="inputEmail" class="form-label">Id del jugador:</label>
+                            <input type="number" name="id_jugador" class="form-control"  value="<?= $personas['id_jugador']?>">
                         </div>
                         <div class="col-md-4 ">
                             <label for="inputEmail" class="form-label">Partidos Jugados:</label>

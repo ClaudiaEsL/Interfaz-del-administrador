@@ -97,7 +97,7 @@ display: none;
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
                                 <label for="date" class="form-label">Fecha:</label>
-                                <input type="date" class="form-control" id="date" name="date">
+                                <input type="date" class="form-control" id="date" name="date" required>
                             </div>
                             <div class="col p-2">
                                 <label for="nombre" class="form-label">Jugador:</label>
