@@ -57,21 +57,9 @@ a:hover, .menu ul li:hover{
 .sesion{
     width: 100%;
     height: 50px;
-    display:flex;
-    justify-content: space-between;
     box-shadow: 0px 1px 10px -6px black;
-    background: rgb(105,34,247);
-    background: linear-gradient(0deg, rgba(105,34,247,1) 0%, rgba(45,81,253,1) 100%);
     color:white!important;
-}
-.sesion .cerrar_sesion h5{
-    font-size:14px;
-    color:black;
-}
-.sesion .cerrar_sesion a{
-    text-decoration: none;
-    color:black;
-    font-family: 'Lato', sans-serif;
+    background: linear-gradient(0deg, rgba(105,34,247,1) 0%, rgba(45,81,253,1) 100%);
 }
 .sesion .cerrar_sesion{
     text-align: right;
@@ -84,9 +72,9 @@ a:hover, .menu ul li:hover{
     padding-left:1%;
     width:50%;
 }
-.sesion .nombre_usuario h5{
-    font-family: 'Lato', sans-serif;
-    font-size:15px!important;
+.sesion .nombre_usuario #mensaje-muestra{
+    font-size:14px!important;
+    color:rgb(255, 255, 255);
 }
 #abrir{
     display:flex;
@@ -99,4 +87,9 @@ a:hover, .menu ul li:hover{
 form{
     width:80%;
     padding:2%;
+}
+@media only screen and (max-width: 600px) {
+    .sesion .nombre_usuario #mensaje-muestra{
+        display:none;
+    }
 }

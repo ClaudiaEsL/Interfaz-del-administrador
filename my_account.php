@@ -22,14 +22,11 @@
 <body>
     <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Mi cuenta</h3>
-            <?php if(!empty($mensaje)):?>
-            <p>
-                <?= $mensaje ?>
-            </p>
-            <?php endif;?>
+            <!--Mensaje de comprobacion-->
+            <?php require 'components/mensaje_registro.php';?>
             <div class="container" style="display: flex; justify-content:center;margin-top:2%;">
                 <form class="row g-3 bg-light" method="POST" action="my_account.php">
                     <div class="col-md-6">

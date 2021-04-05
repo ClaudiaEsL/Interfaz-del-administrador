@@ -40,7 +40,7 @@ require('components/player_edit_combo.php');
 <body>
 <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
         <!--Hoja de estitlo para el formulario-->
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Editar a jugadores</h3>

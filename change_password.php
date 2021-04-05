@@ -27,13 +27,11 @@
 <body>
     <div class="content">
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Mis datos</h3>
-            <?php if(!empty($mensaje)):?>
-            <p class="mensajeform">
-                <?= $mensaje ?>
-            </p>
-            <?php endif;?>
+            <!--Mensaje de registro-->
+            <?php require 'components/mensaje_registro.php';?>
+            
             <div class="container" style="display: flex; justify-content:center;">
                 <form class="row g-3" method="POST" action="change_password.php">
                     <div class="col-12">
@@ -52,7 +50,7 @@
                         <input type="password" class="form-control" id="passwordagain" name="passwordagain">
                     </div>
                     <div class="col-md-6">
-                        <button type="button" class="btn btn-danger" >Cancelar</button>    
+                        <a href="my_account.php" type="button" class="btn btn-danger" >Cancelar</a>    
                         <button type="submit" class="btn btn-primary" >Guardar</button>
                     </div>
                 </form>

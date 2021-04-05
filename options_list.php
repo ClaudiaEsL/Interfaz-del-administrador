@@ -9,11 +9,11 @@
     <div class="content">
 
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
-        <div class="contenido"><div class="sesion"><?php require 'components/sesion.php';?></div>
+        <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
             <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Administrar datos</h3>
-            <div id="container" class="d-flex justify-content-center flex-wrap">
-                <table id="tabla-opciones" class="table table-striped table-hover p-2 border caption-top overflow-auto " >
+            <div class="d-flex justify-content-center flex-wrap container" style="margin-top:1%;margin-bottom:10%">
+                <table id="tabla" class="table table-striped table-hover caption-top">
                     <caption class="bg-primary text-light px-2">Lista de roles registrados</caption>
                     <thead>
                         <tr>
