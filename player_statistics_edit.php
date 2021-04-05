@@ -1,5 +1,5 @@
   <?php
-    include("conexion.php");
+    include("php/conexion.php");
     require 'components/verify_sesion.php';
     ?>
 

@@ -18,13 +18,13 @@
                     <thead>
                         <tr>
                             <th scope="col" >ID</th>
-                            <th scope="col" >Nombre</th>
-                            <th scope="col" >Apellido Paterno</th>
-                            <th scope="col" >Apellido Materno</th>
-                            <th scope="col" >Lugar de Nacimineto</th>
-                            <th scope="col" >Fecha de nacimiento</th>
-                            <th scope="col" >Categoria</th>
-                            <th scope="col" >Posicion</th>
+                            <th scope="col" >Partidos Jugados</th>
+                            <th scope="col" >Goles</th>
+                            <th scope="col" >Asistencias</th>
+                            <th scope="col" >Faltas Recibidas</th>
+                            <th scope="col" >Pases</th>
+                            <th scope="col" >Goles Penaltis</th>
+                            <th scope="col" >Balones Recuperados</th>
                             <th scope="col" >Entrenador</th>
                             <th scope="col" >Acciones</th>
                         </tr>
@@ -48,6 +48,7 @@
                             <th style="width: 100%;">
                             <?php echo "<a title='Editar registro' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-pencil-square'></i></a>"; ?>
                             <?php echo "<a title='Eliminar registro' class='btn btn-danger' style='color:white; margin-left:1%;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' ><i class='bi bi-trash-fill'></i></a>"; ?>
+                            <?php echo "<a title='Registro Estadistica' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_statistics_register.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-card-list'></i></i></a>"; ?>
                             </th>
                         </tr>
                         <?php
