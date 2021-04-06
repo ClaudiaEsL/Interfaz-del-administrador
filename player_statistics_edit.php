@@ -110,7 +110,7 @@
                 <!---->
                 <div class="container d-flex justify-content-center" style="margin-top:1%;margin-bottom:5%;">
                     <!--Formulario para registrar al jugador-->
-                    <form action="player_statistics.php?id_statistics_jugador=<?= $id_estad_jugador?>" class="formularios bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
+                    <form action="player_statistics_edit.php?id_jugador=<?= $id_estad_jugador?>" class="formularios bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Id del jugador:</label>
                             <input type="text" name="id_estad_jugador" class="form-control col-md-2" value="<?php echo $id_estad_jugador; ?>"  required disabled>
