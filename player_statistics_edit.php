@@ -113,11 +113,11 @@
                     <form action="player_statistics_edit.php?id_jugador=<?= $id_estad_jugador?>" class="formularios bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Id del jugador:</label>
-                            <input type="text" name="id_estad_jugador" class="form-control col-md-2" value="<?php echo $id_estad_jugador; ?>"  required disabled>
+                            <input type="text" id="id_jugador" name="id_estad_jugador" class="form-control col-md-2" value="<?php echo $id_estad_jugador; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputespecialista" class="form-label col-md-6">Torneo:</label><br>
-                            <select class="form-select form-select-sm col-md-2"  name="torneo" id="inputcargo" required disabled>
+                            <select id="torneo" class="form-select form-select-sm col-md-2"  name="torneo" id="inputcargo" required disabled>
                             <?php
                                 $consulta1 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo = '$torneo'");
                                 while($categoria = mysqli_fetch_array($consulta1)){
@@ -130,91 +130,91 @@
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Partidos jugados:</label>
-                            <input type="text" name="partidos_jugados" class="form-control col-md-2" value="<?php echo $partidos_jugados; ?>" required disabled>
+                            <input type="text" id="partidos_jugados" name="partidos_jugados" class="form-control col-md-2" value="<?php echo $partidos_jugados; ?>" required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº goles registrados:</label>
-                            <input type="text" name="goles" class="form-control col-md-2" value="<?php echo $goles; ?>"required disabled>
+                            <input type="text" id="goles" name="goles" class="form-control col-md-2" value="<?php echo $goles; ?>"required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº remates registrados:</label>
-                            <input type="text" name="remates" class="form-control col-md-2" value="<?php echo $remates; ?>" required disabled>
+                            <input type="text" id="remates" name="remates" class="form-control col-md-2" value="<?php echo $remates; ?>" required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de asistencias:</label>
-                            <input type="text" name="asistencias" class="form-control col-md-2" value="<?php echo $asistencias; ?>"  required disabled>
+                            <input type="text" id="asistencia" name="asistencias" class="form-control col-md-2" value="<?php echo $asistencias; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Minutos jugados registrados:</label>
-                            <input type="text" name="min_jugados" class="form-control col-md-2" value="<?php echo $min_jugados; ?>" required disabled>
+                            <input type="text" id="min_jugados" name="min_jugados" class="form-control col-md-2" value="<?php echo $min_jugados; ?>" required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de faltas recibidas:</label>
-                            <input type="text" name="faltas_recibidas" class="form-control col-md-2" value="<?php echo $faltas_recibidas; ?>"  required disabled>
+                            <input type="text" id="faltas_recibidas" name="faltas_recibidas" class="form-control col-md-2" value="<?php echo $faltas_recibidas; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de pases:</label>
-                            <input type="text" name="pases" class="form-control col-md-2" value="<?php echo $pases; ?>"  required disabled>
+                            <input type="text" id="pases" name="pases" class="form-control col-md-2" value="<?php echo $pases; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles penalti:</label>
-                            <input type="text" name="goles_penalti" class="form-control col-md-2" value="<?php echo $goles_penalti; ?>"  required disabled>
+                            <input type="text" id="goles_penalti" name="goles_penalti" class="form-control col-md-2" value="<?php echo $goles_penalti; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de balones recuperados:</label>
-                            <input type="text" name="balones_recuperados" class="form-control col-md-2" value="<?php echo $balones_recuperdos; ?>"  required disabled>
+                            <input type="text" id="balones_recuperados" name="balones_recuperados" class="form-control col-md-2" value="<?php echo $balones_recuperdos; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de faltas cometidas:</label>
-                            <input type="text" name="faltas_cometidas" class="form-control col-md-2" value="<?php echo $faltas_cometidas; ?>" required disabled>
+                            <input type="text" id="faltas_cometidas" name="faltas_cometidas" class="form-control col-md-2" value="<?php echo $faltas_cometidas; ?>" required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de partidos titulares:</label>
-                            <input type="text" name="partidos_titular" class="form-control col-md-2" value="<?php echo $partidos_titular; ?>"  required disabled>
+                            <input type="text" id="partidos_titular" name="partidos_titular" class="form-control col-md-2" value="<?php echo $partidos_titular; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de participaciones en partidos suplente:</label>
-                            <input type="text" name="partidos_suplente" class="form-control col-md-2" value="<?php echo $partidos_suplente; ?>"  required disabled>
+                            <input type="text" id="partidos_suplente" name="partidos_suplente" class="form-control col-md-2" value="<?php echo $partidos_suplente; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles por cabeza:</label>
-                            <input type="text" name="goles_cabeza" class="form-control col-md-2" value="<?php echo $goles_cabeza; ?>"  required disabled>
+                            <input type="text" id="goles_cabeza" name="goles_cabeza" class="form-control col-md-2" value="<?php echo $goles_cabeza; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles con pie derecho:</label>
-                            <input type="text" name="goles_pie_der" class="form-control col-md-2" value="<?php echo $goles_pie_der; ?>" required disabled>
+                            <input type="text" id="goles_pie_der" name="goles_pie_der" class="form-control col-md-2" value="<?php echo $goles_pie_der; ?>" required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles con pie izquierdo:</label>
-                            <input type="text" name="goles_pie_izq" class="form-control col-md-2" value="<?php echo $goles_pie_izq; ?>"  required disabled>
+                            <input type="text" id="goles_pie_izq" name="goles_pie_izq" class="form-control col-md-2" value="<?php echo $goles_pie_izq; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de penaltiz lanzados:</label>
-                            <input type="text" name="penaltis_lanzados" class="form-control col-md-2" value="<?php echo $penaltis_lanzados; ?>"  required disabled>
+                            <input type="text" id="penaltis_lanzados" name="penaltis_lanzados" class="form-control col-md-2" value="<?php echo $penaltis_lanzados; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles por falt directa:</label>
-                            <input type="text" name="goles_falta_directa" class="form-control col-md-2" value="<?php echo $goles_falta_directa; ?>"  required disabled>
+                            <input type="text" id="goles_falta_directa" name="goles_falta_directa" class="form-control col-md-2" value="<?php echo $goles_falta_directa; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles recibidos:</label>
-                            <input type="text" name="goles_recibidos" class="form-control col-md-2" value="<?php echo $goles_recibidos; ?>"  required disabled>
+                            <input type="text" id="goles_recibidos" name="goles_recibidos" class="form-control col-md-2" value="<?php echo $goles_recibidos; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de partidos inhabilitados:</label>
-                            <input type="text" name="partidos_inavilitados" class="form-control col-md-2" value="<?php echo $partidos_inavilitados; ?>"  required disabled>
-                        </div>
+                            <input type="text" id="partidos_inabilitado" name="partidos_inavilitados" class="form-control col-md-2" value="<?php echo $partidos_inavilitados; ?>"  required disabled>
+                        </div> 
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles por centro:</label>
-                            <input type="text" name="goles_centro" class="form-control col-md-2" value="<?php echo $goles_centro; ?>"  required disabled>
+                            <input type="text"id="goles_centro" name="goles_centro" class="form-control col-md-2" value="<?php echo $goles_centro; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de goles por fuera:</label>
-                            <input type="text" name="goles_fuera" class="form-control col-md-2" value="<?php echo $goles_fuera; ?>"  required disabled>
+                            <input type="text" id="goles_fuera" name="goles_fuera" class="form-control col-md-2" value="<?php echo $goles_fuera; ?>"  required disabled>
                         </div>
                         <div class="col-md-4 d-flex flex-row">
                             <label for="inputEmail" class="form-label col-md-6">Nº de paradas por centro:</label>
-                            <input type="text" name="paradas_centro" class="form-control col-md-2" value="<?php echo $paradas_centro; ?>"  required disabled>
+                            <input type="text" id="paradas_centro" name="paradas_centro" class="form-control col-md-2" value="<?php echo $paradas_centro; ?>"  required disabled>
                         </div>
                         <!--Ejemplo-->
                         <div class="col-md-4 d-flex flex-row">
