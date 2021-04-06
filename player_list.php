@@ -18,13 +18,13 @@
                     <thead>
                         <tr>
                             <th scope="col" >ID</th>
-                            <th scope="col" >Partidos Jugados</th>
-                            <th scope="col" >Goles</th>
-                            <th scope="col" >Asistencias</th>
-                            <th scope="col" >Faltas Recibidas</th>
-                            <th scope="col" >Pases</th>
-                            <th scope="col" >Goles Penaltis</th>
-                            <th scope="col" >Balones Recuperados</th>
+                            <th scope="col" >Nombre</th>
+                            <th scope="col" >Apellido Paterno</th>
+                            <th scope="col" >Apellido Materno</th>
+                            <th scope="col" >Lugar de Nacimineto</th>
+                            <th scope="col" >Fecha de nacimiento</th>
+                            <th scope="col" >Categoria</th>
+                            <th scope="col" >Posicion</th>
                             <th scope="col" >Entrenador</th>
                             <th scope="col" >Acciones</th>
                         </tr>
