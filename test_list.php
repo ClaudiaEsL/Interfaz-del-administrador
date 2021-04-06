@@ -40,6 +40,7 @@
                             <th style="width: 100%;display:flex;">
                             <?php echo "<a title=Ver test' class='btn btn-success' style='color:white; margin-left:1%;' href='test_register.php?id_jugador=".$filas['id_jugador']."'>Registrar test</a>"; ?>
                             <?php echo "<a title=Ver test' class='btn btn-primary' style='color:white; margin-left:1%;' href='test_list_save.php?id_jugador=".$filas['id_jugador']."'>Ver test registrados</a>"; ?>
+                            <?php echo "<a title='Registro Estadistica' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_statistics_edit.php?id_jugador=".$filas['id_jugador']."'>Ver estadisticas del jugador</a>"; ?>
                             </th>
                         </tr>
                         <?php

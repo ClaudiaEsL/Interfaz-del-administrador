@@ -48,7 +48,6 @@
                             <th style="width: 100%;">
                             <?php echo "<a title='Editar registro' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_edit.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-pencil-square'></i></a>"; ?>
                             <?php echo "<a title='Eliminar registro' class='btn btn-danger' style='color:white; margin-left:1%;' href='player_delete.php?id_jugador=".$filas['id_jugador']."' onclick='return confirmar()' ><i class='bi bi-trash-fill'></i></a>"; ?>
-                            <?php echo "<a title='Registro Estadistica' class='btn btn-success' style='color:white; margin-left:1%;' href='player_statistics_register.php?id_jugador=".$filas['id_jugador']."'><i class='bi bi-card-list'></i></i></a>"; ?>
                             </th>
                         </tr>
                         <?php

@@ -53,7 +53,7 @@ display: none;
             <!---->
             <div class="container" style="margin-top:1%;margin-bottom:5%;">
                 <h2 clas    s="display-4">Examen de: <?=$jugador['nombre'] ?> <?= $jugador['ap_paterno']?></h2>
-                <div class="d-flex justify-content-between bg-primary p-2 text-white"><h6>Fecha de registro: <?= $examen['fecha']?></h6><h6># del examen: <?= $examen['id_examen']?></h6></div>
+                <div class="d-flex justify-content-between bg-primary p-2 text-white"><h6>Fecha de registro: <?= $examen['fecha']?></h6><h6> del examen: <?= $examen['id_examen']?></h6></div>
                 <div class="list-group border p-1">
                     <ul class="list-group">
                         <li class="list-group-item ">
