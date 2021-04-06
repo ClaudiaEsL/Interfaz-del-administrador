@@ -77,125 +77,125 @@
                 <form action="player_statistics_register.php?id_jugador=<?= $personas['id_jugador'];?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
                     <div class="d-flex justify-content-sm-around">
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Id del jugador:</label>
+                            <label for="inputIdJugador" class="form-label">Id del jugador:</label>
                             <input type="number" name="id_jugador" class="form-control"  value="<?= $personas['id_jugador']?>">
                         </div>                      
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Partidos Jugados:</label>
+                            <label for="inputPartidosJugados" class="form-label">Partidos Jugados:</label>
                             <input type="text" name="partidos_jugados" class="form-control" placeholder="Partidos Jugados"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Asistencias:</label>
+                            <label for="inputAsistencia" class="form-label">Asistencias:</label>
                             <input type="text" name="asistencias" class="form-control" placeholder="Asistencias"  required>
                         </div>                        
                     </div>
                     <div class="d-flex justify-content-sm-around">                                         
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Minutos Jugados:</label>
+                            <label for="inputMinJuegos" class="form-label">Minutos Jugados:</label>
                             <input type="text" name="min_jugados" class="form-control" placeholder="Minutos Jugados"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Remates:</label>
+                            <label for="inputRemates" class="form-label">Remates:</label>
                             <input type="text" name="remates" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Faltas Resividas:</label>
+                            <label for="inputFaltasRecibidas" class="form-label">Faltas Resividas:</label>
                             <input type="text" class="form-control" name="faltas_resbidas" placeholder="Cantidad"  required>
                         </div>
                     </div>
                     <div class="d-flex justify-content-sm-around"> 
                         
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Pases:</label>
+                            <label for="inputPases" class="form-label">Pases:</label>
                             <input type="text" name="pases" class="form-control" placeholder="Cantidad de pases acumulados"  required>
                         </div>  
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Penalti:</label>
+                            <label for="inputGolesPenalti" class="form-label">Goles De Penalti:</label>
                             <input type="text" name="goles_penalti" class="form-control" placeholder="Cantidad"  required>
                         </div> 
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles:</label>
+                            <label for="inputGoles" class="form-label">Goles:</label>
                             <input type="text" name="goles" class="form-control"  placeholder="Goles Anotados" required>
                         </div> 
                     </div>
                     <div class="d-flex justify-content-sm-around">                       
                         
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Cabeza:</label>
+                            <label for="inputGolesCabeza" class="form-label">Goles De Cabeza:</label>
                             <input type="text" name="goles_cabeza" class="form-control" placeholder="Cantidad "  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Pie Izquierdo:</label>
+                            <label for="inputGolesPieIzq" class="form-label">Goles De Pie Izquierdo:</label>
                             <input type="text" name="goles_pie_izq" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Pie Derecho:</label>
+                            <label for="inputGolesPieDer" class="form-label">Goles De Pie Derecho:</label>
                             <input type="text" name="goles_pie_der" class="form-control" placeholder="Cantidad"  required>
                         </div> 
                         
                     </div>
                     <div class="d-flex justify-content-sm-around"> 
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Partidos Suplente:</label>
+                            <label for="inputPartidosSuplente" class="form-label">Partidos Suplente:</label>
                             <input type="text" name="partidos_suplente" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Partidos Titular:</label>
+                            <label for="inputPartidosTitular" class="form-label">Partidos Titular:</label>
                             <input type="text" name="partidos_titular" class="form-control" placeholder="Cantidad"  required>
                         </div>                     
                         
                          <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Faltas Cometidas:</label>
+                            <label for="inputFaltasCometidas" class="form-label">Faltas Cometidas:</label>
                             <input type="text" name="faltas_cometidas" class="form-control" placeholder="Cantidad "  required>
                         </div>                       
                     </div>
                     
                     <div class="d-flex justify-content-sm-around">                  
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Balones Recuperados:</label>
+                            <label for="inputBalonesRecuperados" class="form-label">Balones Recuperados:</label>
                             <input type="text" name="balones_recuperados" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Penaltis Lanzados:</label>
+                            <label for="inputPenaltizLanzados" class="form-label">Penaltis Lanzados:</label>
                             <input type="text" name="penaltis_lanzados" class="form-control" placeholder="Cantidad "  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Falta Directa:</label>
+                            <label for="inputGolesFaltaDirecta" class="form-label">Goles De Falta Directa:</label>
                             <input type="text" name="goles_falta_directa" class="form-control" placeholder="Cantidad"  required>
                         </div>
                     </div>
                     <div class="d-flex justify-content-sm-around">                       
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles Recibidos:</label>
+                            <label for="inputGolesRecibidos" class="form-label">Goles Recibidos:</label>
                             <input type="text" name="goles_recibidos" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Centro:</label>
+                            <label for="inputGolesCentro" class="form-label">Goles De Centro:</label>
                             <input type="text" name="goles_centro" class="form-control" placeholder="Cantidad"  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Goles De Fuera:</label>
+                            <label for="inputGolesFuera" class="form-label">Goles De Fuera:</label>
                             <input type="text" name="goles_fuera" class="form-control" placeholder="Cantidad"  required>
                         </div>
                     </div>
                     <div class="d-flex justify-content-sm-around">
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Partidos Inavilitado:</label>
+                            <label for="inputPartidosInavilitados" class="form-label">Partidos Inavilitado:</label>
                             <input type="text" name="partidos_inavilitados" class="form-control" placeholder="Cantidad "  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Paradas Centro</label>
+                            <label for="inputParadasCentro" class="form-label">Paradas Centro</label>
                             <input type="text" name="paradas_centro" class="form-control" placeholder="Cantidad "  required>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="inputEmail" class="form-label">Paradas De fuera:</label>
+                            <label for="inputParadasFuera" class="form-label">Paradas De fuera:</label>
                             <input type="text" name="paradas_fuera" class="form-control" placeholder="Cantidad"  required>
                         </div>
                     </div>
                     <div class="d-flex justify-content-sm-around">
                         
                         <div class="col-md-4 ">
-                            <label for="inputcargo" class="form-label">Torneo:</label>
+                            <label for="inputTorneo" class="form-label">Torneo:</label>
                             <select class="form-select form-select-sm"  name="torneo" id="inputcargo" required >
                             <option  value="" disabled selected>-Seleccione una opcion-</option>
                             <?php
