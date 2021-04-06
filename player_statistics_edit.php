@@ -122,7 +122,15 @@
                                 $consulta1 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo = '$torneo'");
                                 while($categoria = mysqli_fetch_array($consulta1)){
                             ?>
-                                <option   value="<?= $categoria['id_torneo']?>"><?= $categoria['nombre']?></option>
+                                <option value="<?= $categoria['id_torneo']?>" selected><?= $categoria['nombre']?></option>
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $consulta2 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo!= '$torneo'");
+                                while($categoria = mysqli_fetch_array($consulta2)){
+                            ?>
+                                <option value="<?= $categoria['id_torneo']?>"><?= $categoria['nombre']?></option>
                             <?php
                                 }
                             ?>
