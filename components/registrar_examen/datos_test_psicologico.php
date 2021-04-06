@@ -1,9 +1,9 @@
-<h2> Paso 2: Examen Psicologico</h2>
+<h4> Sección 2: Examen Psicológico</h4>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
-        <label for="psicologo" class="form-label">Encargado de realizar el examen (Psicolog@):</label>
+        <label for="psicologo" class="form-label">Encargado de realizar el examen (Psicólogo):</label>
         <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="psicologo" name="psicologo">
-        <option  value="" disabled selected>-Lista de encargados registrados-</option>
+        <option  value="" disabled selected>-Seleccione una opción-</option>
         <?php
         /*Desplegar los datos de la lista de psicologos registrados */
         $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '7'");
@@ -18,17 +18,17 @@
 </div>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
-        <label for="eleccion" class="form-label">Eleccion:</label>
+        <label for="eleccion" class="form-label">Elección:</label>
         <input type="text" class="form-control" id="eleccion" name="eleccion">
     </div>
     <div class="col p-2">
-        <label for="rapidez" class="form-label">Rapidez:</label>
+        <label for="rapidez" class="form-label">Rapidez mental:</label>
         <input type="text" class="form-control" id="rapidez" name="rapidez">
     </div>
 </div>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
-        <label for="efect_tactica_mental" class="form-label">E. tactica mental:</label>
+        <label for="efect_tactica_mental" class="form-label">Táctica mental:</label>
         <input type="text" class="form-control" id="efect_tactica_mental" name="efect_tactica_mental">
     </div>
 </div>

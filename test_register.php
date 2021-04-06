@@ -86,17 +86,17 @@ display: none;
             <?php require 'components/mensaje_registro.php';?>
             <!---->
             <div class="container" style="margin-top:1%;margin-bottom:5%;">
-                <h2>Registro de examenes Psicologico, Fisico y Medico</h2>
+                <h4>Registro de examenes (Psicológico, Físico y Medico)</h4>
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div class="alert alert-success hide"></div>
                 <form id="register_form" novalidate action="test_register.php?id_jugador=<?=$jugador['id_jugador']?>" method="post" class="container">
                     <fieldset>
-                        <h2>Paso 1: Datos del examen</h2>
+                        <h4>Sección 1: Llenar los datos del examen</h4>
                         <div class="row align-items-start bg-light border">
                             <div class="col p-2">
-                                <label for="date" class="form-label">Fecha:</label>
+                                <label for="date" class="form-label">Fecha de registro:</label>
                                 <input type="date" class="form-control" id="date" name="date" required>
                             </div>
                             <div class="col p-2">
