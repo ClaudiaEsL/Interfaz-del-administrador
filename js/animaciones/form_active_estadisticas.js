@@ -34,6 +34,10 @@ function activar_formulario_estadisticas(){
     btn.style.display = "flex";
 }
 function desactivar_formulario_estadisticas(){
+
+
+    document.getElementById('id_jugador').disabled = false;
+    document.getElementById('torneo').disabled = false;
      document.getElementById('partidos_jugados').disabled = true;
     document.getElementById('goles').disabled = true;
     document.getElementById('remates').disabled = true;
@@ -54,6 +58,7 @@ function desactivar_formulario_estadisticas(){
     document.getElementById('goles_recibidos').disabled = true;
     document.getElementById('partidos_inabilitado').disabled = true;
     document.getElementById('goles_centro').disabled = true;
+    document.getElementById('goles_fuera').disabled = true;
     document.getElementById('paradas_centro').disabled = true;
     document.getElementById('paradas_fuera').disabled = true;
 

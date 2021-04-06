@@ -46,7 +46,7 @@
     if (isset($_POST['enviar'])) {
 
         $torneo =$_POST['torneo'];
-        $id_jugador =$_POST['id_jugador'];
+        $id_jugador =$_POST['id_estad_jugador'];
         $partidos_jugados =$_POST['partidos_jugados'];
         $goles =$_POST['goles'];
         $asistencias =$_POST['asistencias'];
@@ -79,7 +79,8 @@
              goles_pie_izq='".$goles_pie_izq."',goles_pie_der='".$goles_pie_der."',penaltis_lanzados='".$penaltis_lanzados."',
              goles_falta_directa='".$goles_falta_directa."',goles_recibidos='".$goles_recibidos."',
              partidos_inavilitado='".$partidos_inavilitados."',goles_centro='".$goles_centro."',goles_fuera='".$goles_fuera."',
-             paradas_centro='".$paradas_centro."',paradas_fuera='".$paradas_fuera."',id_torneo01='".$torneo."',id_jugador03='".$id_jugador."' ";
+             paradas_centro='".$paradas_centro."',paradas_fuera='".$paradas_fuera."',id_torneo01='".$torneo."'
+             WHERE id_jugador03='".$id_jugador."' ";
         
         $resultado=mysqli_query($conn,$sql);
         if($resultado){
