@@ -18,14 +18,15 @@
         <div class="contenedor-menu" id="menu"><?php require 'components/menu.php';?></div>
         <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
-            <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Registrar/ Ver test</h3>
+            <h3 class="text-center" style="font-size: 20px;margin-top:1%;">Registrar Test / Ver estadísticas</h3>
             <div class="container" style="display:flex;justify-content:center;">
                 <table id="tabla" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" >ID</th>
+                            <th scope="col" >#</th>
                             <th scope="col" >Nombre</th>
-                            <th scope="col" >Acciones</th>
+                            <th scope="col" >Tests</th>
+                            <th scope="col" >Estadísticas</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,7 +41,9 @@
                             <th style="width: 100%;display:flex;">
                             <?php echo "<a title=Ver test' class='btn btn-success' style='color:white; margin-left:1%;' href='test_register.php?id_jugador=".$filas['id_jugador']."'>Registrar test</a>"; ?>
                             <?php echo "<a title=Ver test' class='btn btn-primary' style='color:white; margin-left:1%;' href='test_list_save.php?id_jugador=".$filas['id_jugador']."'>Ver test registrados</a>"; ?>
-                            <?php echo "<a title='Registro Estadistica' class='btn btn-warning' style='color:white; margin-left:1%;' href='player_statistics_edit.php?id_jugador=".$filas['id_jugador']."'>Ver estadisticas del jugador</a>"; ?>
+                            </th>
+                            <th>
+                            <?php echo "<a title='Registro Estadística' class='btn btn-info' style='color:white; margin-left:1%;' href='player_statistics_edit.php?id_jugador=".$filas['id_jugador']."'>Ver estadísticas</a>"; ?>
                             </th>
                         </tr>
                         <?php

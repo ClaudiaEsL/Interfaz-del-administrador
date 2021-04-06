@@ -1,9 +1,9 @@
-<h2>Paso 3: Examen Predeportivo: Test fisico</h2>
+<h4>Sección 3: Examen Predeportivo: Test físico</h4>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
-        <label for="preparador" class="form-label">Encargado de realizar el examen (Preparador Fisico):</label >
+        <label for="preparador" class="form-label">Encargado de realizar el examen (Preparador Físico):</label >
         <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="preparador" name="preparador_fisico" required>
-        <option  value="" disabled selected>-Lista de encargados registrados-</option>
+        <option  value="" disabled selected>-Seleccione una opción-</option>
         <?php
         /*Desplegar la lista de los preparadores fisicos*/
         $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '3'");
@@ -54,7 +54,7 @@
         <input type="text" class="form-control" id="flexibilidad" name="flexibilidad"  required>
     </div>
     <div class="col p-2">
-        <label for="tension_arterial" class="form-label">Tension Arterial:</label>
+        <label for="tension_arterial" class="form-label">Tensión Arterial:</label>
         <input type="text" class="form-control" id="tension_arterial" name="tension_arterial"  required>
     </div>
 </div>

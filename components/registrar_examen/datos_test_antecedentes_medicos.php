@@ -1,9 +1,9 @@
-<h2>Paso 4: Examen Predeportivo: Test Antecedentes medicos</h2>
+<h4>Sección 4: Examen Predeportivo: Test Antecedentes medicos</h4>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
         <label for="medico" class="form-label">Encargado de realizar el examen (Medico):</label >
         <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="medico" name="medico" required>
-        <option  value="" disabled selected>-Lista de encargados registrados-</option>
+        <option  value="" disabled selected>-Seleccione una opción-</option>
         <?php
         /*Desplegar la lista de medicos registrados */
         $consulta3 =  mysqli_query($conn,"SELECT id_cuerpo_tecnico, nombre FROM cuerpo_tecnico WHERE id_cargo01 = '4'");
@@ -26,7 +26,7 @@
         <input type="text" class="form-control" id="enfermedades" name="enfermedades" required>
     </div>
     <div class="col p-2">
-        <label for="cirugias" class="form-label">Cirugias:</label>
+        <label for="cirugias" class="form-label">Cirugías:</label>
         <input type="text" class="form-control" id="cirugias" name="cirugias" required>
     </div>
 </div>
