@@ -8,7 +8,7 @@
     <h5 id="mensaje-muestra" >Usuario <?= $user['nombre']?> conectado  <svg xmlns="http://www.w3.org/2000/svg" style="color:greenyellow;margin-left:1%;" width="10" height="10" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg></h5>
 </div>
 <div class="cerrar_sesion">
-    <h5><a title="Cerrar sesion" type="button" href="close_sesion.php" style="color:white;">Salir</a></h5>
+    <h5><a title="Cerrar sesion" class="bg-none" href="close_sesion.php" style="color:white;">Salir</a></h5>
 </div>
 <?php else:
     require 'index.php';

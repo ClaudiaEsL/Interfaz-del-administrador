@@ -55,8 +55,8 @@
             <!---->
             <div class="container" style="display: flex; justify-content:center;">
                 <!--Formulario para registrar al jugador-->
-                <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
-                    <div class="d-flex justify-content-sm-around">
+                <form action="<?=$_SERVER['PHP_SELF']?>" class="formularios row g-4 bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
+                    <div class="row">
                         <div class="col-md-4 ">
                             <label for="inputEmail" class="form-label">Nombres:</label>
                             <input type="text" name="nombre" class="form-control" placeholder="Ingrese los nombres"  required>
@@ -76,7 +76,7 @@
                             <input type="file" class="form-control" id="image" name="image" multiple required>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-sm-around">
+                    <div class="row">
                         <div class="col-md-6 ">
                             <label for="inputEmail" class="form-label">Lugar de nacimiento:</label>
                             <input type="text" name="lugar_nacimiento" class="form-control" placeholder="Pais, Ciudad"  required>
@@ -86,7 +86,7 @@
                             <input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento"  required>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-sm-around">
+                    <div class="row">
                         <div class="col-md-4 ">
                             <label for="inputcargo" class="form-label">Categoria:</label><br>
                             <select class="form-select form-select-sm"  name="id_categoria" id="inputcargo" required >

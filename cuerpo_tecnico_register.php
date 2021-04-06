@@ -27,7 +27,7 @@
             <div class="container" style="display: flex; justify-content:center;">
                 <form class="formularios row g-4 bg-light" method="POST" action="cuerpo_tecnico_register.php" style="margin-top:1%;">
                     <div class="col-12">
-                        <label for="inputname" class="form-label">Nombre:</label>
+                        <label for="inputname" class="form-label">Nombre completo:</label>
                         <input type="text" class="form-control" id="inputname" name="nombre" required autofocus>
                     </div>
                     <div class="col-md-6 ">
@@ -35,11 +35,11 @@
                         <input type="date" class="form-control" id="inputfn" name="fech_nac"  required>
                     </div>
                     <div class="col-md-6">
-                    <label for="inputci" class="form-label">CI:</label>
+                    <label for="inputci" class="form-label">Nº de CI:</label>
                         <input type="text" class="form-control" id="inputci" name="ci"  required >
                     </div>
                     <div class="col-12">
-                        <label for="inputtel" class="form-label">Telefono:</label>
+                        <label for="inputtel" class="form-label">Telefono o celular:</label>
                         <input type="number" class="form-control" id="inputtel" name="tel" required>
                     </div>
                     <div class="col-md-6">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputcargo" class="form-label">Cargo:</label><br>
-                        <select name="cargo" id="inputcargo" required >
+                        <select class="form-select form-select-sm" name="cargo" id="inputcargo" required >
                         <?php
                             $consulta =  mysqli_query($conn,"SELECT id_cargo, nombre FROM cargo");
                             while($personas = mysqli_fetch_array($consulta)){
@@ -59,7 +59,7 @@
                         ?>
                         </select>
                     </div>
-                    <div id="editar" class="col-md-6">
+                    <div id="editar" class="col-md-6 d-flex justify-content-center container">
                         <input type="submit" class="btn btn-primary" value = "Guardar">
                     </div>
                 </form>

@@ -27,12 +27,12 @@
             <div class="container" style="display: flex; justify-content:center;">
                 <form class="formularios row g-4 bg-light" method="POST" action="user_register.php" style="margin-top:1%;">
                     <div class="col-12">
-                        <label for="inputname" class="form-label">Nombre:</label>
+                        <label for="inputname" class="form-label">Ingrese el nombre completo:</label>
                         <input type="text" class="form-control" id="inputname" name="nombre" required autofocus>
                     </div>
                     <div class="col-md-6 ">
                         <label for="inputEmail" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email"  required>
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="ejemplo@gmail.com" required>
                     </div>
                     <div class="col-md-6">
                     <label for="inputuser" class="form-label">Usuario:</label>
@@ -44,7 +44,8 @@
                     </div>
                     <div class="col-12">
                         <label for="inputcargo" class="form-label">Cargo:</label><br>
-                        <select name="rol" id="inputcargo" required >
+                        <select class="form-select form-select-sm" name="rol" id="inputcargo" required >
+                        <option value="" selected disabled>-Seleccione el rol a registrar-</option>
                         <?php
                             $consulta =  mysqli_query($conn,"SELECT id_rol, nombre FROM rol");
                             while($personas = mysqli_fetch_array($consulta)){
@@ -55,7 +56,7 @@
                         ?>
                         </select>
                     </div>
-                    <div id="editar" class="col-md-6">
+                    <div id="editar" class="col-md-6 d-flex justify-content-center container">
                         <input type="submit" class="btn btn-primary" value = "Guardar">
                     </div>
                 </form>
