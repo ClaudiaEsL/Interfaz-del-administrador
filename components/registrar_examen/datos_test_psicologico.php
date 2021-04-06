@@ -18,7 +18,7 @@
 </div>
 <div class="row align-items-start bg-light border">
     <div class="col p-2">
-        <label for="eleccion" class="form-label">Elección:</label>
+        <label for="eleccion" class="form-label">Elección de respuesta:</label>
         <input type="text" class="form-control" id="eleccion" name="eleccion">
     </div>
     <div class="col p-2">
