@@ -39,7 +39,7 @@ display: none;
                 <ul class="list-group">
                     <?php
                     $id = $jugador['id_jugador'];
-                    $sql = "SELECT * FROM examen WHERE d_jugador04 = '$id'";
+                    $sql = "SELECT * FROM examen WHERE d_jugador04 = '$id' ORDER BY fecha DESC";
                     $resultado = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($resultado)>0){
                         while ($filas = mysqli_fetch_assoc($resultado)) {
