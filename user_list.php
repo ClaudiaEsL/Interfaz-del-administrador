@@ -37,7 +37,7 @@
                             <td><?= $personas['usuario']?></td>
                             <td><?= $personas['email']?></td>
                             <td><?= $personas['id_rol01']?></td>
-                            <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$personas['id_usuario']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
+                            <td><button class="btn btn-danger"><?php echo "<a href='user_delete.php?id=".$personas['id_usuario']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
                         </tr>
                         <?php
                             }

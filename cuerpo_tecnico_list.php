@@ -41,7 +41,7 @@
                             <td><?= $personas['telefono']?></td>
                             <td><?= $personas['fecha_contratacion']?></td>
                             <td><?= $personas['id_cargo01']?></td>
-                            <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$personas['id_cuerpo_tecnico']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
+                            <td><button class="btn btn-danger"><?php echo "<a href='user_delete.php?id=".$personas['id_cuerpo_tecnico']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
                         </tr>
                         <?php
                             }

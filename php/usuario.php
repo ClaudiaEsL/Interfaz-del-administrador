@@ -36,10 +36,21 @@ class usuario {
     public static function verificar_contraseña($contraseña, $hash){
         return password_verify($contraseña, $hash);
     }
-    /*Eliminar registros*/
+    /*Eliminar registros cuerpo tecnico*/
     public static function eliminar_registro($id){
         require 'php/conexion.php';
         $records = $conn->prepare("DELETE FROM cuerpo_tecnico WHERE id_cuerpo_tecnico = '$id'");
+        if($records-> execute()){
+            return "Datos eliminados exitosamente";
+        }
+        else{
+            return "Datos no eliminados";
+        }
+    }
+    /*Eliminar registros usuario */
+    public static function eliminar_registro_usuario($id){
+        require 'php/conexion.php';
+        $records = $conn->prepare("DELETE FROM usuario WHERE id_usuario = '$id'");
         if($records-> execute()){
             return "Datos eliminados exitosamente";
         }
