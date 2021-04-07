@@ -98,7 +98,7 @@ else{
                           Por favor introduzca su contraseña
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark" style="width:95%;">Ingresar</button>
+                    <button type="submit" id="ingresar" class="btn btn-dark" style="width:95%;">Ingresar</button>
                 </form>
             </div>
         </div>
