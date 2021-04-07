@@ -13,7 +13,7 @@
         <div class="contenido"><div class="sesion d-flex"><?php require 'components/sesion.php';?></div>
 
         <h3 class="text-center" style="font-size: 18px;margin-top:1%;">Jugadores registrados</h3>
-            <div class="container d-flex justify-content-center" style="width:100%;">
+            <div class="container d-flex justify-content-center" style="width:80%; margin-bottom:5%;">
                 <table id="tabla" class="table table-striped table-hover bg-light" style="width:100%;">
                     <thead>
                         <tr>
@@ -26,7 +26,7 @@
                             <th scope="col" >Categoria</th>
                             <th scope="col" >Posicion</th>
                             <th scope="col" >Entrenador</th>
-                            <th scope="col" >Acciones</th>
+                            <th scope="col" >Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
