@@ -18,8 +18,8 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Opciones</th>
+                            <th  scope="col">Nombre</th>
+                           <!--  <th type="hidden" scope="col">Opciones</th> "Linea para futura actualizacion " -->  
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +30,7 @@
                          <tr>
                             <th><?= $roles['id_rol']?></th>
                             <td><?= $roles['nombre']?></td>
-                            <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$roles['id_rol']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
+                          <!--  <td><button type="hidden" class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$roles['id_rol']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td> -->
                         </tr>
                         <?php
                             }
@@ -43,7 +43,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Opciones</th>
+                         <!--   <th scope="col">Opciones</th> "Linea para futura actualizacion "--> 
                         </tr>
                     </thead>
                     <tbody>
@@ -54,8 +54,8 @@
                          <tr>
                             <th><?= $categorias['id_categoria']?></th>
                             <td><?= $categorias['nombre']?></td>
-                            <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$categorias['id_categoria']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
-                        </tr>
+                        <!--    <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$categorias['id_categoria']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td> -->
+                        </tr> 
                         <?php
                             }
                         ?>
@@ -67,7 +67,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Opciones</th>
+                        <!--    <th scope="col">Opciones</th> "Linea para futura actualizacion "  -->
                         </tr>
                     </thead>
                     <tbody>
@@ -78,7 +78,7 @@
                          <tr>
                             <th><?= $posiciones['id_pocision']?></th>
                             <td><?= $posiciones['nombre']?></td>
-                            <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$posiciones['id_pocision']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td>
+                        <!--    <td><button class="btn btn-danger"><?php echo "<a href='delete_register.php?id=".$posiciones['id_pocision']."' onclick='return confirmar()' >Eliminar</a>"; ?></button></td> -->
                         </tr>
                         <?php
                             }
