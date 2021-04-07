@@ -109,127 +109,227 @@
                 <?php if($verificar == true):?>
                 <h6 class="text-center">Jugador:  <?= $jugador['nombre']?></h6>
                 <!---->
-                <div class="container d-flex justify-content-center" style="margin-top:1%;margin-bottom:5%;">
+                <div class=" d-flex justify-content-center container" style="margin-top:1%;margin-bottom:5%;">
                     <!--Formulario para registrar al jugador-->
                     <form action="player_statistics_edit.php?id_jugador=<?= $id_estad_jugador?>" class="formularios bg-light" id="formulario" name="formulario" method="POST" style="margin-top:1%;" enctype="multipart/form-data">
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputIdJugador" class="form-label col-md-6">Id del jugador:</label>
-                            <input type="text" id="id_jugador" name="id_estad_jugador" class="form-control col-md-2" value="<?php echo $id_estad_jugador; ?>"  required disabled>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputIdJugador" class="form-label">Id del jugador:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="id_jugador" name="id_estad_jugador" class="form-control" value="<?php echo $id_estad_jugador; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputespecialista" class="form-label col-md-6">Torneo:</label><br>
-                            <select id="torneo" class="form-select form-select-sm col-md-2"  name="torneo" id="inputcargo" required disabled>
-                            <?php
-                                $consulta1 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo = '$torneo'");
-                                while($categoria = mysqli_fetch_array($consulta1)){
-                            ?>
-                                <option value="<?= $categoria['id_torneo']?>" selected><?= $categoria['nombre']?></option>
-                            <?php
-                                }
-                            ?>
-                            <?php
-                                $consulta2 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo!= '$torneo'");
-                                while($categoria = mysqli_fetch_array($consulta2)){
-                            ?>
-                                <option value="<?= $categoria['id_torneo']?>"><?= $categoria['nombre']?></option>
-                            <?php
-                                }
-                            ?>
-                            </select>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputespecialista" class="form-label">Torneo:</label>
+                            </div>
+                            <div class="col-4">
+                                <select id="torneo" class="form-select form-select-sm col-md-2"  name="torneo" id="inputcargo" required disabled>
+                                <?php
+                                    $consulta1 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo = '$torneo'");
+                                    while($categoria = mysqli_fetch_array($consulta1)){
+                                ?>
+                                    <option value="<?= $categoria['id_torneo']?>" selected><?= $categoria['nombre']?></option>
+                                <?php
+                                    }
+                                ?>
+                                <?php
+                                    $consulta2 =  mysqli_query($conn,"SELECT id_torneo, nombre FROM torneo WHERE id_torneo!= '$torneo'");
+                                    while($categoria = mysqli_fetch_array($consulta2)){
+                                ?>
+                                    <option value="<?= $categoria['id_torneo']?>"><?= $categoria['nombre']?></option>
+                                <?php
+                                    }
+                                ?>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPartidosJugados" class="form-label col-md-6">Partidos jugados:</label>
-                            <input type="text" id="partidos_jugados" name="partidos_jugados" class="form-control col-md-2" value="<?php echo $partidos_jugados; ?>" required disabled>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputPartidosJugados" class="form-label">Partidos jugados:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="partidos_jugados" name="partidos_jugados" class="form-control col-md-2" value="<?php echo $partidos_jugados; ?>" required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGoles" class="form-label col-md-6">Nº goles registrados:</label>
-                            <input type="text" id="goles" name="goles" class="form-control col-md-2" value="<?php echo $goles; ?>"required disabled>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputGoles" class="form-label">Nº goles registrados:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="goles" name="goles" class="form-control col-md-2" value="<?php echo $goles; ?>"required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputRemates" class="form-label col-md-6">Nº remates registrados:</label>
-                            <input type="text" id="remates" name="remates" class="form-control col-md-2" value="<?php echo $remates; ?>" required disabled>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputRemates" class="form-label">Nº remates registrados:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="remates" name="remates" class="form-control col-md-2" value="<?php echo $remates; ?>" required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputAsistencia" class="form-label col-md-6">Nº de asistencias:</label>
-                            <input type="text" id="asistencia" name="asistencias" class="form-control col-md-2" value="<?php echo $asistencias; ?>"  required disabled>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <label for="inputAsistencia" class="form-label">Nº de asistencias:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="asistencia" name="asistencias" class="form-control col-md-2" value="<?php echo $asistencias; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputMinutosJugados" class="form-label col-md-6">Minutos jugados registrados:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputMinutosJugados" class="form-label">Minutos jugados registrados:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="min_jugados" name="min_jugados" class="form-control col-md-2" value="<?php echo $min_jugados; ?>" required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputFaltasRecibidas" class="form-label col-md-6">Nº de faltas recibidas:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputFaltasRecibidas" class="form-label" >Nº de faltas recibidas:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="faltas_recibidas" name="faltas_recibidas" class="form-control col-md-2" value="<?php echo $faltas_recibidas; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPases" class="form-label col-md-6">Nº de pases:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputPases" class="form-label">Nº de pases:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="pases" name="pases" class="form-control col-md-2" value="<?php echo $pases; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesPenalti" class="form-label col-md-6">Nº de goles penalti:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesPenalti" class="form-label">Nº de goles penalti:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_penalti" name="goles_penalti" class="form-control col-md-2" value="<?php echo $goles_penalti; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputBalonesRecuperados" class="form-label col-md-6">Nº de balones recuperados:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputBalonesRecuperados" class="form-label">Nº de balones recuperados:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="balones_recuperados" name="balones_recuperados" class="form-control col-md-2" value="<?php echo $balones_recuperdos; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputFaltasCometidas" class="form-label col-md-6">Nº de faltas cometidas:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputFaltasCometidas" class="form-label">Nº de faltas cometidas:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="faltas_cometidas" name="faltas_cometidas" class="form-control col-md-2" value="<?php echo $faltas_cometidas; ?>" required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPartidosTitular" class="form-label col-md-6">Nº de partidos titulares:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputPartidosTitular" class="form-label">Nº de partidos titulares:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="partidos_titular" name="partidos_titular" class="form-control col-md-2" value="<?php echo $partidos_titular; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPartidosSuplente" class="form-label col-md-6">Nº de participaciones en partidos suplente:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputPartidosSuplente" class="form-label">Nº de partidos como suplente:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="partidos_suplente" name="partidos_suplente" class="form-control col-md-2" value="<?php echo $partidos_suplente; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesCabeza" class="form-label col-md-6">Nº de goles por cabeza:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesCabeza" class="form-label">Nº de goles por cabeza:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_cabeza" name="goles_cabeza" class="form-control col-md-2" value="<?php echo $goles_cabeza; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesPieDerecho" class="form-label col-md-6">Nº de goles con pie derecho:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesPieDerecho" class="form-label">Nº de goles con pie derecho:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_pie_der" name="goles_pie_der" class="form-control col-md-2" value="<?php echo $goles_pie_der; ?>" required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesPieIzquierdo" class="form-label col-md-6">Nº de goles con pie izquierdo:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesPieIzquierdo" class="form-label">Nº de goles con pie izquierdo:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_pie_izq" name="goles_pie_izq" class="form-control col-md-2" value="<?php echo $goles_pie_izq; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPenaltisLanzados" class="form-label col-md-6">Nº de penaltiz lanzados:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputPenaltisLanzados" class="form-label">Nº de penaltiz lanzados:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="penaltis_lanzados" name="penaltis_lanzados" class="form-control col-md-2" value="<?php echo $penaltis_lanzados; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesFaltaDirecta" class="form-label col-md-6">Nº de goles por falt directa:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesFaltaDirecta" class="form-label">Nº de goles por falt directa:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_falta_directa" name="goles_falta_directa" class="form-control col-md-2" value="<?php echo $goles_falta_directa; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesRecibidos" class="form-label col-md-6">Nº de goles recibidos:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesRecibidos" class="form-label">Nº de goles recibidos:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_recibidos" name="goles_recibidos" class="form-control col-md-2" value="<?php echo $goles_recibidos; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputPartidosInabilitado" class="form-label col-md-6">Nº de partidos inhabilitados:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputPartidosInabilitado" class="form-label">Nº de partidos inhabilitados:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="partidos_inabilitado" name="partidos_inavilitados" class="form-control col-md-2" value="<?php echo $partidos_inavilitados; ?>"  required disabled>
-                        </div> 
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesCentro" class="form-label col-md-6">Nº de goles por centro:</label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesCentro" class="form-label">Nº de goles por centro:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text"id="goles_centro" name="goles_centro" class="form-control col-md-2" value="<?php echo $goles_centro; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputGolesFuera" class="form-label col-md-6">Nº de goles por fuera:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputGolesFuera" class="form-label">Nº de goles por fuera:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="goles_fuera" name="goles_fuera" class="form-control col-md-2" value="<?php echo $goles_fuera; ?>"  required disabled>
+                            </div>
                         </div>
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputParadasCentro" class="form-label col-md-6">Nº de paradas por centro:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputParadasCentro" class="form-label">Nº de paradas por centro:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="paradas_centro" name="paradas_centro" class="form-control col-md-2" value="<?php echo $paradas_centro; ?>"  required disabled>
+                            </div>
                         </div>
-                        <!--Ejemplo-->
-                        <div class="col-md-4 d-flex flex-row">
-                            <label for="inputParadasFuera" class="form-label col-md-6">Nº de paradas por fuera:</label>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                            <label for="inputParadasFuera" class="form-label">Nº de paradas por fuera:</label>
+                            </div>
+                            <div class="col-4">
                             <input type="text" id="paradas_fuera" name="paradas_fuera" class="form-control col-md-2" value="<?php echo $paradas_fuera; ?>" required disabled>
+                            </div>
                         </div>
+                    
                         <input type="button" class="btn btn-success" id="btn-editar" style="width:100%;" onclick="activar_formulario_estadisticas()" value="Actualizar datos">
                         <div id="opciones-edicion" style="display:none;">
                             <input id="btn-enviar" type="submit" class="btn btn-primary" name="enviar" value="Actualizar" style="width:50%;" required>
